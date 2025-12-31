@@ -1,0 +1,20 @@
+<employees>
+  <employee>
+    <id>1</id>
+    <name>Snehal</name>
+    <department>Engineering</department>
+    <salary>75000</salary>
+  </employee>
+  <employee>
+    <id>2</id>
+    <name>Anandhi</name>
+    <department>Finance</department>
+    <salary>68000</salary>
+  </employee>
+  <employee>
+    <id>3</id>
+    <name>Shweta</name>
+    <department>HR</department>
+    <salary>62000</salary>
+  </employee>
+</employees>
