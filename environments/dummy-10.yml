@@ -1,5 +1,14 @@
 fileVersion: 1
 id: "10"
-mappingDefinitions: {}
+mappingDefinitions:
+  SRC:
+    database: SNOWFLAKE_SAMPLE_DATA
+    schema: TPCH_SF1
+  TARGET:
+    database: SNEHAL_DB
+    schema: INFORMATION_SCHEMA
+  WORK:
+    database: SNEHAL_DB
+    schema: TESTING
 name: dummy
 type: Environment
