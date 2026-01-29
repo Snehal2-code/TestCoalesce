@@ -1,0 +1,628 @@
+fileVersion: 1
+id: 66011ee3-e9a5-436c-aeed-1c99ac064c19
+name: V_CUSTOMER
+operation:
+  config:
+    insertStrategy: UNION
+    selectDistinct: false
+  database: ""
+  deployEnabled: true
+  description: Customer data as defined by TPC-H
+  isMultisource: false
+  locationName: SRC
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6608e082-1d2e-46e2-b976-36e537137619
+          stepCounter: 66011ee3-e9a5-436c-aeed-1c99ac064c19
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: C_CUSTKEY
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9dc87d77-6129-4cee-a620-72145c775233
+                stepCounter: 57cf37dc-5ea5-4ef6-8883-43f41bf1f673
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5e012df1-0f92-48f3-8b7a-294872521043
+          stepCounter: 66011ee3-e9a5-436c-aeed-1c99ac064c19
+        config: {}
+        dataType: VARCHAR(25)
+        description: ""
+        name: C_NAME
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e3a91188-74e2-44e8-948e-e5795f21f313
+                stepCounter: 57cf37dc-5ea5-4ef6-8883-43f41bf1f673
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0c442051-e7f8-4e2e-a1d7-da6be27cf9f6
+          stepCounter: 66011ee3-e9a5-436c-aeed-1c99ac064c19
+        config: {}
+        dataType: VARCHAR(40)
+        description: ""
+        name: C_ADDRESS
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6476025a-f965-4bd8-9db1-80e35e41eeec
+                stepCounter: 57cf37dc-5ea5-4ef6-8883-43f41bf1f673
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d5814d0d-f68d-4ffb-af3c-62667312cfb6
+          stepCounter: 66011ee3-e9a5-436c-aeed-1c99ac064c19
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: C_NATIONKEY
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3b05a28c-9947-4494-b813-d0050e123e99
+                stepCounter: 57cf37dc-5ea5-4ef6-8883-43f41bf1f673
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a969900c-b9e4-4b81-b1c6-8dc0b66feacf
+          stepCounter: 66011ee3-e9a5-436c-aeed-1c99ac064c19
+        config: {}
+        dataType: VARCHAR(15)
+        description: ""
+        name: C_PHONE
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a61f14d3-4186-45dc-bfbc-8c333d9b100d
+                stepCounter: 57cf37dc-5ea5-4ef6-8883-43f41bf1f673
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: fb2ae412-99ee-4ee7-8147-12f2bb724d8a
+          stepCounter: 66011ee3-e9a5-436c-aeed-1c99ac064c19
+        config: {}
+        dataType: NUMBER(12,2)
+        description: ""
+        name: C_ACCTBAL
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 47373b6b-85d8-45fd-a0de-c07842352c84
+                stepCounter: 57cf37dc-5ea5-4ef6-8883-43f41bf1f673
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 70883717-10d7-47a8-ada0-a1f7156ae8cb
+          stepCounter: 66011ee3-e9a5-436c-aeed-1c99ac064c19
+        config: {}
+        dataType: VARCHAR(10)
+        description: ""
+        name: C_MKTSEGMENT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 23e6025a-50c6-4a15-aa88-b6f68e7b2cf1
+                stepCounter: 57cf37dc-5ea5-4ef6-8883-43f41bf1f673
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 860f6aba-f0c7-4705-bf79-036c47b34148
+          stepCounter: 66011ee3-e9a5-436c-aeed-1c99ac064c19
+        config: {}
+        dataType: VARCHAR(117)
+        description: ""
+        name: C_COMMENT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 508d0653-e4b4-46f4-8d71-f9ae2bc4ecd2
+                stepCounter: 57cf37dc-5ea5-4ef6-8883-43f41bf1f673
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          CUSTOMER: 57cf37dc-5ea5-4ef6-8883-43f41bf1f673
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SRC
+            nodeName: CUSTOMER
+        join:
+          joinCondition: |-
+            FROM {{ ref('SRC', 'CUSTOMER') }} "CUSTOMER"
+            FROM fact_orders fo
+
+            LEFT JOIN dim_customer dc
+              ON fo.customer_id = dc.customer_id
+             AND dc.is_active = 'Y'
+             AND COALESCE(dc.deleted_flag, 'N') = 'N'
+             AND dc.customer_type IN ('RETAIL', 'CORPORATE')
+
+            LEFT JOIN dim_customer_address dca
+              ON dc.customer_id = dca.customer_id
+             AND dca.address_type = 'PRIMARY'
+             AND dca.is_current = 'Y'
+
+            LEFT JOIN dim_product dp
+              ON fo.product_id = dp.product_id
+             AND dp.current_flag = 'Y'
+             AND dp.product_status <> 'DISCONTINUED'
+
+            LEFT JOIN dim_product_category dpc
+              ON dp.category_id = dpc.category_id
+             AND dpc.is_active = 'Y'
+
+            LEFT JOIN dim_product_subcategory dpsc
+              ON dp.subcategory_id = dpsc.subcategory_id
+             AND dpsc.category_id = dpc.category_id
+
+            LEFT JOIN dim_supplier dsup
+              ON dp.supplier_id = dsup.supplier_id
+             AND dsup.approved_flag = 'Y'
+
+            LEFT JOIN dim_date dd_order
+              ON fo.order_date = dd_order.calendar_date
+
+            LEFT JOIN dim_date dd_ship
+              ON fo.ship_date = dd_ship.calendar_date
+
+            LEFT JOIN dim_date dd_delivery
+              ON fo.delivery_date = dd_delivery.calendar_date
+
+            LEFT JOIN dim_sales_rep dsr
+              ON fo.sales_rep_id = dsr.sales_rep_id
+             AND dsr.active_flag = 'Y'
+             AND dsr.termination_date IS NULL
+
+            LEFT JOIN dim_sales_team dst
+              ON dsr.sales_team_id = dst.sales_team_id
+             AND dst.team_status = 'ACTIVE'
+
+            LEFT JOIN dim_region dr
+              ON dst.region_code = dr.region_code
+             AND dr.is_enabled = 'Y'
+
+            LEFT JOIN dim_country dct
+              ON dr.country_code = dct.country_code
+             AND dct.is_supported = 'Y'
+
+            LEFT JOIN dim_currency dcur
+              ON fo.currency_code = dcur.currency_code
+             AND dcur.is_default = 'Y'
+
+            LEFT JOIN dim_exchange_rate der
+              ON fo.currency_code = der.from_currency
+             AND der.to_currency = 'USD'
+             AND fo.order_date BETWEEN der.valid_from AND der.valid_to
+
+            LEFT JOIN dim_channel dch
+              ON fo.channel_id = dch.channel_id
+             AND UPPER(dch.channel_type) IN ('ONLINE', 'RETAIL', 'PARTNER')
+
+            LEFT JOIN dim_marketing_campaign dmc
+              ON fo.campaign_id = dmc.campaign_id
+             AND dmc.start_date <= fo.order_date
+             AND dmc.end_date >= fo.order_date
+
+            LEFT JOIN dim_promotion dpromo
+              ON fo.promo_id = dpromo.promo_id
+             AND dpromo.is_active = 'Y'
+             AND dpromo.discount_percent > 0
+
+            LEFT JOIN dim_coupon dcoup
+              ON dpromo.coupon_code = dcoup.coupon_code
+             AND dcoup.is_redeemable = 'Y'
+
+            LEFT JOIN dim_payment_method dpm
+              ON fo.payment_method_id = dpm.payment_method_id
+             AND dpm.is_enabled = 'Y'
+             AND dpm.method_type <> 'DEPRECATED'
+
+            LEFT JOIN dim_payment_provider dpp
+              ON dpm.provider_id = dpp.provider_id
+             AND dpp.provider_status = 'ACTIVE'
+
+            LEFT JOIN dim_shipping_method dsm
+              ON fo.shipping_method_id = dsm.shipping_method_id
+             AND dsm.is_available = 'Y'
+
+            LEFT JOIN dim_carrier dcar
+              ON dsm.carrier_id = dcar.carrier_id
+             AND dcar.carrier_rating >= 3
+
+            LEFT JOIN dim_tax_code dtc
+              ON fo.tax_code = dtc.tax_code
+             AND dtc.is_active = 'Y'
+
+            LEFT JOIN dim_tax_rate dtr
+              ON dtc.tax_code = dtr.tax_code
+             AND fo.order_date BETWEEN dtr.effective_from AND dtr.effective_to
+
+            LEFT JOIN dim_return_reason drr
+              ON fo.return_reason_id = drr.return_reason_id
+             AND fo.is_returned = 'Y'
+             FROM fact_orders fo
+
+            LEFT JOIN dim_customer dc
+              ON fo.customer_id = dc.customer_id
+             AND dc.is_active = 'Y'
+             AND COALESCE(dc.deleted_flag, 'N') = 'N'
+             AND dc.customer_type IN ('RETAIL', 'CORPORATE')
+
+            LEFT JOIN dim_customer_address dca
+              ON dc.customer_id = dca.customer_id
+             AND dca.address_type = 'PRIMARY'
+             AND dca.is_current = 'Y'
+
+            LEFT JOIN dim_product dp
+              ON fo.product_id = dp.product_id
+             AND dp.current_flag = 'Y'
+             AND dp.product_status <> 'DISCONTINUED'
+
+            LEFT JOIN dim_product_category dpc
+              ON dp.category_id = dpc.category_id
+             AND dpc.is_active = 'Y'
+
+            LEFT JOIN dim_product_subcategory dpsc
+              ON dp.subcategory_id = dpsc.subcategory_id
+             AND dpsc.category_id = dpc.category_id
+
+            LEFT JOIN dim_supplier dsup
+              ON dp.supplier_id = dsup.supplier_id
+             AND dsup.approved_flag = 'Y'
+
+            LEFT JOIN dim_date dd_order
+              ON fo.order_date = dd_order.calendar_date
+
+            LEFT JOIN dim_date dd_ship
+              ON fo.ship_date = dd_ship.calendar_date
+
+            LEFT JOIN dim_date dd_delivery
+              ON fo.delivery_date = dd_delivery.calendar_date
+
+            LEFT JOIN dim_sales_rep dsr
+              ON fo.sales_rep_id = dsr.sales_rep_id
+             AND dsr.active_flag = 'Y'
+             AND dsr.termination_date IS NULL
+
+            LEFT JOIN dim_sales_team dst
+              ON dsr.sales_team_id = dst.sales_team_id
+             AND dst.team_status = 'ACTIVE'
+
+            LEFT JOIN dim_region dr
+              ON dst.region_code = dr.region_code
+             AND dr.is_enabled = 'Y'
+
+            LEFT JOIN dim_country dct
+              ON dr.country_code = dct.country_code
+             AND dct.is_supported = 'Y'
+
+            LEFT JOIN dim_currency dcur
+              ON fo.currency_code = dcur.currency_code
+             AND dcur.is_default = 'Y'
+
+            LEFT JOIN dim_exchange_rate der
+              ON fo.currency_code = der.from_currency
+             AND der.to_currency = 'USD'
+             AND fo.order_date BETWEEN der.valid_from AND der.valid_to
+
+            LEFT JOIN dim_channel dch
+              ON fo.channel_id = dch.channel_id
+             AND UPPER(dch.channel_type) IN ('ONLINE', 'RETAIL', 'PARTNER')
+
+            LEFT JOIN dim_marketing_campaign dmc
+              ON fo.campaign_id = dmc.campaign_id
+             AND dmc.start_date <= fo.order_date
+             AND dmc.end_date >= fo.order_date
+
+            LEFT JOIN dim_promotion dpromo
+              ON fo.promo_id = dpromo.promo_id
+             AND dpromo.is_active = 'Y'
+             AND dpromo.discount_percent > 0
+
+            LEFT JOIN dim_coupon dcoup
+              ON dpromo.coupon_code = dcoup.coupon_code
+             AND dcoup.is_redeemable = 'Y'
+
+            LEFT JOIN dim_payment_method dpm
+              ON fo.payment_method_id = dpm.payment_method_id
+             AND dpm.is_enabled = 'Y'
+             AND dpm.method_type <> 'DEPRECATED'
+
+            LEFT JOIN dim_payment_provider dpp
+              ON dpm.provider_id = dpp.provider_id
+             AND dpp.provider_status = 'ACTIVE'
+
+            LEFT JOIN dim_shipping_method dsm
+              ON fo.shipping_method_id = dsm.shipping_method_id
+             AND dsm.is_available = 'Y'
+
+            LEFT JOIN dim_carrier dcar
+              ON dsm.carrier_id = dcar.carrier_id
+             AND dcar.carrier_rating >= 3
+
+            LEFT JOIN dim_tax_code dtc
+              ON fo.tax_code = dtc.tax_code
+             AND dtc.is_active = 'Y'
+
+            LEFT JOIN dim_tax_rate dtr
+              ON dtc.tax_code = dtr.tax_code
+             AND fo.order_date BETWEEN dtr.effective_from AND dtr.effective_to
+
+            LEFT JOIN dim_return_reason drr
+              ON fo.return_reason_id = drr.return_reason_id
+             AND fo.is_returned = 'Y'
+
+            LEFT JOIN dim_refund drf
+              ON fo.order_id = drf.order_id
+             AND drf.refund_status = 'COMPLETED'
+
+            LEFT JOIN dim_audit_status das
+              ON fo.audit_status_id = das.audit_status_id
+             AND das.requires_review = 'N'
+
+             FROM fact_orders fo
+
+            LEFT JOIN dim_customer dc
+              ON fo.customer_id = dc.customer_id
+             AND dc.is_active = 'Y'
+             AND COALESCE(dc.deleted_flag, 'N') = 'N'
+             AND dc.customer_type IN ('RETAIL', 'CORPORATE')
+
+            LEFT JOIN dim_customer_address dca
+              ON dc.customer_id = dca.customer_id
+             AND dca.address_type = 'PRIMARY'
+             AND dca.is_current = 'Y'
+
+            LEFT JOIN dim_product dp
+              ON fo.product_id = dp.product_id
+             AND dp.current_flag = 'Y'
+             AND dp.product_status <> 'DISCONTINUED'
+
+            LEFT JOIN dim_product_category dpc
+              ON dp.category_id = dpc.category_id
+             AND dpc.is_active = 'Y'
+
+            LEFT JOIN dim_product_subcategory dpsc
+              ON dp.subcategory_id = dpsc.subcategory_id
+             AND dpsc.category_id = dpc.category_id
+
+            LEFT JOIN dim_supplier dsup
+              ON dp.supplier_id = dsup.supplier_id
+             AND dsup.approved_flag = 'Y'
+
+            LEFT JOIN dim_date dd_order
+              ON fo.order_date = dd_order.calendar_date
+
+            LEFT JOIN dim_date dd_ship
+              ON fo.ship_date = dd_ship.calendar_date
+
+            LEFT JOIN dim_date dd_delivery
+              ON fo.delivery_date = dd_delivery.calendar_date
+
+            LEFT JOIN dim_sales_rep dsr
+              ON fo.sales_rep_id = dsr.sales_rep_id
+             AND dsr.active_flag = 'Y'
+             AND dsr.termination_date IS NULL
+
+            LEFT JOIN dim_sales_team dst
+              ON dsr.sales_team_id = dst.sales_team_id
+             AND dst.team_status = 'ACTIVE'
+
+            LEFT JOIN dim_region dr
+              ON dst.region_code = dr.region_code
+             AND dr.is_enabled = 'Y'
+
+            LEFT JOIN dim_country dct
+              ON dr.country_code = dct.country_code
+             AND dct.is_supported = 'Y'
+
+            LEFT JOIN dim_currency dcur
+              ON fo.currency_code = dcur.currency_code
+             AND dcur.is_default = 'Y'
+
+            LEFT JOIN dim_exchange_rate der
+              ON fo.currency_code = der.from_currency
+             AND der.to_currency = 'USD'
+             AND fo.order_date BETWEEN der.valid_from AND der.valid_to
+
+            LEFT JOIN dim_channel dch
+              ON fo.channel_id = dch.channel_id
+             AND UPPER(dch.channel_type) IN ('ONLINE', 'RETAIL', 'PARTNER')
+
+            LEFT JOIN dim_marketing_campaign dmc
+              ON fo.campaign_id = dmc.campaign_id
+             AND dmc.start_date <= fo.order_date
+             AND dmc.end_date >= fo.order_date
+
+            LEFT JOIN dim_promotion dpromo
+              ON fo.promo_id = dpromo.promo_id
+             AND dpromo.is_active = 'Y'
+             AND dpromo.discount_percent > 0
+
+            LEFT JOIN dim_coupon dcoup
+              ON dpromo.coupon_code = dcoup.coupon_code
+             AND dcoup.is_redeemable = 'Y'
+
+            LEFT JOIN dim_payment_method dpm
+              ON fo.payment_method_id = dpm.payment_method_id
+             AND dpm.is_enabled = 'Y'
+             AND dpm.method_type <> 'DEPRECATED'
+
+            LEFT JOIN dim_payment_provider dpp
+              ON dpm.provider_id = dpp.provider_id
+             AND dpp.provider_status = 'ACTIVE'
+
+            LEFT JOIN dim_shipping_method dsm
+              ON fo.shipping_method_id = dsm.shipping_method_id
+             AND dsm.is_available = 'Y'
+
+            LEFT JOIN dim_carrier dcar
+              ON dsm.carrier_id = dcar.carrier_id
+             AND dcar.carrier_rating >= 3
+
+            LEFT JOIN dim_tax_code dtc
+              ON fo.tax_code = dtc.tax_code
+             AND dtc.is_active = 'Y'
+
+            LEFT JOIN dim_tax_rate dtr
+              ON dtc.tax_code = dtr.tax_code
+             AND fo.order_date BETWEEN dtr.effective_from AND dtr.effective_to
+
+            LEFT JOIN dim_return_reason drr
+              ON fo.return_reason_id = drr.return_reason_id
+             AND fo.is_returned = 'Y'
+
+            LEFT JOIN dim_refund drf
+              ON fo.order_id = drf.order_id
+             AND drf.refund_status = 'COMPLETED'
+
+            LEFT JOIN dim_audit_status das
+              ON fo.audit_status_id = das.audit_status_id
+             AND das.requires_review = 'N'
+
+             FROM fact_orders fo
+
+            LEFT JOIN dim_customer dc
+              ON fo.customer_id = dc.customer_id
+             AND dc.is_active = 'Y'
+             AND COALESCE(dc.deleted_flag, 'N') = 'N'
+             AND dc.customer_type IN ('RETAIL', 'CORPORATE')
+
+            LEFT JOIN dim_customer_address dca
+              ON dc.customer_id = dca.customer_id
+             AND dca.address_type = 'PRIMARY'
+             AND dca.is_current = 'Y'
+
+            LEFT JOIN dim_product dp
+              ON fo.product_id = dp.product_id
+             AND dp.current_flag = 'Y'
+             AND dp.product_status <> 'DISCONTINUED'
+
+            LEFT JOIN dim_product_category dpc
+              ON dp.category_id = dpc.category_id
+             AND dpc.is_active = 'Y'
+
+            LEFT JOIN dim_product_subcategory dpsc
+              ON dp.subcategory_id = dpsc.subcategory_id
+             AND dpsc.category_id = dpc.category_id
+
+            LEFT JOIN dim_supplier dsup
+              ON dp.supplier_id = dsup.supplier_id
+             AND dsup.approved_flag = 'Y'
+
+            LEFT JOIN dim_date dd_order
+              ON fo.order_date = dd_order.calendar_date
+
+            LEFT JOIN dim_date dd_ship
+              ON fo.ship_date = dd_ship.calendar_date
+
+            LEFT JOIN dim_date dd_delivery
+              ON fo.delivery_date = dd_delivery.calendar_date
+
+            LEFT JOIN dim_sales_rep dsr
+              ON fo.sales_rep_id = dsr.sales_rep_id
+             AND dsr.active_flag = 'Y'
+             AND dsr.termination_date IS NULL
+
+            LEFT JOIN dim_sales_team dst
+              ON dsr.sales_team_id = dst.sales_team_id
+             AND dst.team_status = 'ACTIVE'
+
+            LEFT JOIN dim_region dr
+              ON dst.region_code = dr.region_code
+             AND dr.is_enabled = 'Y'
+
+            LEFT JOIN dim_country dct
+              ON dr.country_code = dct.country_code
+             AND dct.is_supported = 'Y'
+
+            LEFT JOIN dim_currency dcur
+              ON fo.currency_code = dcur.currency_code
+             AND dcur.is_default = 'Y'
+
+            LEFT JOIN dim_exchange_rate der
+              ON fo.currency_code = der.from_currency
+             AND der.to_currency = 'USD'
+             AND fo.order_date BETWEEN der.valid_from AND der.valid_to
+
+            LEFT JOIN dim_channel dch
+              ON fo.channel_id = dch.channel_id
+             AND UPPER(dch.channel_type) IN ('ONLINE', 'RETAIL', 'PARTNER')
+
+            LEFT JOIN dim_marketing_campaign dmc
+              ON fo.campaign_id = dmc.campaign_id
+             AND dmc.start_date <= fo.order_date
+             AND dmc.end_date >= fo.order_date
+
+            LEFT JOIN dim_promotion dpromo
+              ON fo.promo_id = dpromo.promo_id
+             AND dpromo.is_active = 'Y'
+             AND dpromo.discount_percent > 0
+
+            LEFT JOIN dim_coupon dcoup
+              ON dpromo.coupon_code = dcoup.coupon_code
+             AND dcoup.is_redeemable = 'Y'
+
+            LEFT JOIN dim_payment_method dpm
+              ON fo.payment_method_id = dpm.payment_method_id
+             AND dpm.is_enabled = 'Y'
+             AND dpm.method_type <> 'DEPRECATED'
+
+            LEFT JOIN dim_payment_provider dpp
+              ON dpm.provider_id = dpp.provider_id
+             AND dpp.provider_status = 'ACTIVE'
+
+            LEFT JOIN dim_shipping_method dsm
+              ON fo.shipping_method_id = dsm.shipping_method_id
+             AND dsm.is_available = 'Y'
+
+            LEFT JOIN dim_carrier dcar
+              ON dsm.carrier_id = dcar.carrier_id
+             AND dcar.carrier_rating >= 3
+
+            LEFT JOIN dim_tax_code dtc
+              ON fo.tax_code = dtc.tax_code
+             AND dtc.is_active = 'Y'
+
+            LEFT JOIN dim_tax_rate dtr
+              ON dtc.tax_code = dtr.tax_code
+             AND fo.order_date BETWEEN dtr.effective_from AND dtr.effective_to
+
+            LEFT JOIN dim_return_reason drr
+              ON fo.return_reason_id = drr.return_reason_id
+             AND fo.is_returned = 'Y'
+
+            LEFT JOIN dim_refund drf
+              ON fo.order_id = drf.order_id
+             AND drf.refund_status = 'COMPLETED'
+
+            LEFT JOIN dim_audit_status das
+              ON fo.audit_status_id = das.audit_status_id
+             AND das.requires_review = 'N'
+
+            LEFT JOIN dim_refund drf
+              ON fo.order_id = drf.order_id
+             AND drf.refund_status = 'COMPLETED'
+
+            LEFT JOIN dim_audit_status das
+              ON fo.audit_status_id = das.audit_status_id
+             AND das.requires_review = 'N'
+        name: V_CUSTOMER
+        noLinkRefs: []
+  name: V_CUSTOMER
+  overrideSQL: false
+  schema: ""
+  sqlType: View
+  type: sql
+  version: 1
+type: Node

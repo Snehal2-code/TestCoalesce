@@ -1,0 +1,168 @@
+fileVersion: 1
+id: dea43168-1c0a-4580-91eb-bbd4c47a3671
+name: GITSEED_NODE
+operation:
+  database: ""
+  deployEnabled: true
+  description: ""
+  locationName: WORK
+  metadata:
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b998abc0-9339-4266-9b2a-446e14124822
+          stepCounter: dea43168-1c0a-4580-91eb-bbd4c47a3671
+        config: {}
+        dataType: NUMBER(5,2)
+        defaultValue: ""
+        description: ""
+        name: amount
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 40f361f5-0eb9-4f32-8d6d-4807451582a5
+          stepCounter: dea43168-1c0a-4580-91eb-bbd4c47a3671
+        config: {}
+        dataType: NUMBER(1,0)
+        defaultValue: ""
+        description: ""
+        name: id
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 58d06c5d-2fd0-4216-b312-b432c0c2b323
+          stepCounter: dea43168-1c0a-4580-91eb-bbd4c47a3671
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: name
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a58259fe-6812-4692-b3d0-afdb23f3608c
+          stepCounter: dea43168-1c0a-4580-91eb-bbd4c47a3671
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: FILENAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b44f22de-ca1b-4ccd-8f66-394fc90d76df
+          stepCounter: dea43168-1c0a-4580-91eb-bbd4c47a3671
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: FILE_ROW_NUMBER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 33e2595d-ff8f-4d03-be20-92abf7c91c68
+          stepCounter: dea43168-1c0a-4580-91eb-bbd4c47a3671
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: ""
+        name: FILE_LAST_MODIFIED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0229286e-e2e0-4cfc-ae25-f43b59d5c8f2
+          stepCounter: dea43168-1c0a-4580-91eb-bbd4c47a3671
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: ""
+        name: LOAD_TIMESTAMP
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cb1496b4-8770-4816-85fc-d724485281e1
+          stepCounter: dea43168-1c0a-4580-91eb-bbd4c47a3671
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: ""
+        name: SCAN_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+  name: GITSEED_NODE
+  schema: ""
+  sqlType: Source
+  type: sourceInput
+  version: 1
+type: Node
