@@ -1,5 +1,5 @@
 fileVersion: 1
-id: b10dca94-6530-4599-98fe-ae97e579a11f
+id: 3a391dcc-7e10-46b8-ac38-ae0559f59a70
 name: STG_SOURCE_TABLE
 operation:
   config:
@@ -19,8 +19,8 @@ operation:
     columns:
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: acf7ddf3-3632-48f4-a962-7007ad8d1d28
-          stepCounter: b10dca94-6530-4599-98fe-ae97e579a11f
+          columnCounter: 8f4c405d-22ab-48e0-a4e3-c1912f831abf
+          stepCounter: 3a391dcc-7e10-46b8-ac38-ae0559f59a70
         config: {}
         dataType: NUMBER(38,0)
         description: ""
@@ -33,8 +33,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 63d500c2-35b2-49cd-8b4a-37d9dc4ad705
-          stepCounter: b10dca94-6530-4599-98fe-ae97e579a11f
+          columnCounter: e5c9e173-499a-4108-bb03-491de5f16046
+          stepCounter: 3a391dcc-7e10-46b8-ac38-ae0559f59a70
         config: {}
         dataType: VARCHAR(20)
         description: ""
@@ -47,8 +47,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 244267b0-3713-4c2d-871a-3798ae648e3a
-          stepCounter: b10dca94-6530-4599-98fe-ae97e579a11f
+          columnCounter: 2e259f13-9418-4692-85da-4a9ba2b4a870
+          stepCounter: 3a391dcc-7e10-46b8-ac38-ae0559f59a70
         config: {}
         dataType: VARCHAR(10)
         description: ""
@@ -61,8 +61,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: ba5f6b3e-d15b-4446-b324-ba07075a4c30
-          stepCounter: b10dca94-6530-4599-98fe-ae97e579a11f
+          columnCounter: 94ee07fa-1ef4-43fc-8811-503784a24e9d
+          stepCounter: 3a391dcc-7e10-46b8-ac38-ae0559f59a70
         config: {}
         dataType: NUMBER(10,2)
         description: ""

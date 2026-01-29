@@ -9,6 +9,6 @@ mappingDefinitions:
     schema: INFORMATION_SCHEMA
   WORK:
     database: SNEHAL_DB
-    schema: NEW_SCHEMA
+    schema: PUBLIC
 name: dummy
 type: Environment
