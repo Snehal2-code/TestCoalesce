@@ -1,0 +1,116 @@
+fileVersion: 1
+id: 6ad54b45-083e-4da0-b4e4-dc3a7d42f64f
+name: PVT_SOURCE_TABLE_OO
+operation:
+  config:
+    Colvol1: ""
+    aggfunc:
+      items:
+        - {}
+    aggfunc1:
+      items:
+        - funcname1: MAX
+    defaultval: ""
+    defvalue: false
+    excolval: false
+    exlcol:
+      items:
+        - {}
+    inferPivot: false
+    samKeyColval: false
+    sincol: true
+    subqueryval1: ""
+    tabKeyColumn:
+      items:
+        - keyColTextBox: MONTH
+    tabValueColumn:
+      items:
+        - valColTextBox: BALANCE
+    testsEnabled: false
+    trunc: false
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9300de5e-8a67-4a05-947e-172aa52b2f43
+          stepCounter: 6ad54b45-083e-4da0-b4e4-dc3a7d42f64f
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: ACCOUNT_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b6ed930e-180d-4aa3-a911-517c471aa9b8
+                stepCounter: a96b87d0-958f-4159-bb86-5f1bf6eb7990
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e9b52d9c-10eb-4940-ae8a-29a207ba16ac
+          stepCounter: 6ad54b45-083e-4da0-b4e4-dc3a7d42f64f
+        config: {}
+        dataType: VARCHAR(20)
+        description: ""
+        name: STATUS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: afe78540-0c51-4d5f-b022-6d0c8dcc35a1
+                stepCounter: a96b87d0-958f-4159-bb86-5f1bf6eb7990
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8f51d7f3-e0a3-400f-8fbd-94e41bb37a5b
+          stepCounter: 6ad54b45-083e-4da0-b4e4-dc3a7d42f64f
+        config: {}
+        dataType: VARCHAR(10)
+        description: ""
+        name: MONTH
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5e14d194-94c4-4c99-9427-60acd7b0a82b
+                stepCounter: a96b87d0-958f-4159-bb86-5f1bf6eb7990
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6916a038-f3b7-4d96-afd4-b778e8cae14e
+          stepCounter: 6ad54b45-083e-4da0-b4e4-dc3a7d42f64f
+        config: {}
+        dataType: NUMBER(10,2)
+        description: ""
+        name: BALANCE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3454c442-6797-42a7-b9e7-568f64f88e93
+                stepCounter: a96b87d0-958f-4159-bb86-5f1bf6eb7990
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          SOURCE_TABLE: a96b87d0-958f-4159-bb86-5f1bf6eb7990
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WORK
+            nodeName: SOURCE_TABLE
+        join:
+          joinCondition: FROM {{ ref('WORK', 'SOURCE_TABLE') }} "SOURCE_TABLE"
+        name: PVT_SOURCE_TABLE_OO
+        noLinkRefs: []
+  name: PVT_SOURCE_TABLE_OO
+  overrideSQL: false
+  schema: ""
+  sqlType: functional:::409
+  type: sql
+  version: 1
+type: Node
