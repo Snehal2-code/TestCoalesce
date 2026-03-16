@@ -1,6 +1,6 @@
 fileVersion: 1
-id: 89ae96f1-212c-4f9e-98ad-17b90b6c3713
-name: DIM_SOURCE_TABLE3
+id: a9880b5d-2db9-48ff-bc86-15a55f36557b
+name: PSTG_SOURCE_TABLE
 operation:
   config:
     postSQL: ""
@@ -20,26 +20,25 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: 79ae63de-954e-4b9a-b454-19416d187f32
-          stepCounter: 89ae96f1-212c-4f9e-98ad-17b90b6c3713
+          columnCounter: dd545646-ea42-4e2f-b2db-04edc53f0217
+          stepCounter: a9880b5d-2db9-48ff-bc86-15a55f36557b
         config: {}
         dataType: NUMBER
         defaultValue: ""
         description: ""
         isSurrogateKey: true
-        name: "{{ splt_name(node_name) }}"
+        name: PSTG_SOURCE_TABLE_KEY
         nullable: true
         sourceColumnReferences:
           - columnReferences: []
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 72980e96-9f47-4c8e-88cc-492cac084c0f
-          stepCounter: 89ae96f1-212c-4f9e-98ad-17b90b6c3713
+          columnCounter: 5b840a2e-ba90-4380-ab5c-50d924491d25
+          stepCounter: a9880b5d-2db9-48ff-bc86-15a55f36557b
         config: {}
         dataType: NUMBER(38,0)
         description: ""
-        isBusinessKey: true
         name: ACCOUNT_ID
         nullable: true
         sourceColumnReferences:
@@ -49,8 +48,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: c45dbbca-4385-43ed-a6e0-7f43cda83f25
-          stepCounter: 89ae96f1-212c-4f9e-98ad-17b90b6c3713
+          columnCounter: 4858709d-51d1-4e6e-823e-32055180750f
+          stepCounter: a9880b5d-2db9-48ff-bc86-15a55f36557b
         config: {}
         dataType: VARCHAR(20)
         description: ""
@@ -63,8 +62,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 6d56bb68-312c-40e5-8c40-9d4185fe0c95
-          stepCounter: 89ae96f1-212c-4f9e-98ad-17b90b6c3713
+          columnCounter: e09d3090-5f08-4ff6-a856-af6adaab9289
+          stepCounter: a9880b5d-2db9-48ff-bc86-15a55f36557b
         config: {}
         dataType: VARCHAR(10)
         description: ""
@@ -77,8 +76,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: e24e4af8-df92-4f46-afd8-b4e4c06d5fe9
-          stepCounter: 89ae96f1-212c-4f9e-98ad-17b90b6c3713
+          columnCounter: e36846f8-7c4c-4140-88b4-b7de4b5d7c9a
+          stepCounter: a9880b5d-2db9-48ff-bc86-15a55f36557b
         config: {}
         dataType: NUMBER(10,2)
         description: ""
@@ -94,8 +93,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: a69bc4da-4231-4bac-b18b-3df0de454f12
-          stepCounter: 89ae96f1-212c-4f9e-98ad-17b90b6c3713
+          columnCounter: d2864b0a-afc3-45d9-baf0-8dc2139a7890
+          stepCounter: a9880b5d-2db9-48ff-bc86-15a55f36557b
         config: {}
         dataType: NUMBER
         defaultValue: ""
@@ -111,8 +110,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: 50ff1e27-a988-4f7c-9b08-d93c98366b46
-          stepCounter: 89ae96f1-212c-4f9e-98ad-17b90b6c3713
+          columnCounter: bc7c3e8f-eac3-4244-90dc-174854952395
+          stepCounter: a9880b5d-2db9-48ff-bc86-15a55f36557b
         config: {}
         dataType: VARCHAR
         defaultValue: ""
@@ -128,8 +127,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: be4935d9-4d07-4d0d-958a-b3ffb7607188
-          stepCounter: 89ae96f1-212c-4f9e-98ad-17b90b6c3713
+          columnCounter: d1f8f3ef-eb3b-4392-bc72-99a47217cd90
+          stepCounter: a9880b5d-2db9-48ff-bc86-15a55f36557b
         config: {}
         dataType: TIMESTAMP
         defaultValue: ""
@@ -145,8 +144,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: e43c1c3d-7b0c-456e-917f-0eb132b95838
-          stepCounter: 89ae96f1-212c-4f9e-98ad-17b90b6c3713
+          columnCounter: 888b32e9-0c47-48af-8fe9-ee33e5c7ff84
+          stepCounter: a9880b5d-2db9-48ff-bc86-15a55f36557b
         config: {}
         dataType: TIMESTAMP
         defaultValue: ""
@@ -162,8 +161,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: 857494e9-4b98-45a3-ab2d-ccb16d7f74e2
-          stepCounter: 89ae96f1-212c-4f9e-98ad-17b90b6c3713
+          columnCounter: 731739bc-ca83-4ab5-8087-2e4d5798c514
+          stepCounter: a9880b5d-2db9-48ff-bc86-15a55f36557b
         config: {}
         dataType: TIMESTAMP
         defaultValue: ""
@@ -179,8 +178,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: 4708b552-0057-42a1-86e4-ef79d8dca600
-          stepCounter: 89ae96f1-212c-4f9e-98ad-17b90b6c3713
+          columnCounter: d427f1f5-9a8a-45a1-a573-291ddd96b83b
+          stepCounter: a9880b5d-2db9-48ff-bc86-15a55f36557b
         config: {}
         dataType: TIMESTAMP
         defaultValue: ""
@@ -203,12 +202,12 @@ operation:
             nodeName: SOURCE_TABLE
         join:
           joinCondition: FROM {{ ref('WORK', 'SOURCE_TABLE') }} "SOURCE_TABLE"
-        name: DIM_SOURCE_TABLE3
+        name: PSTG_SOURCE_TABLE
         noLinkRefs: []
-  name: DIM_SOURCE_TABLE3
+  name: PSTG_SOURCE_TABLE
   overrideSQL: false
   schema: ""
-  sqlType: "15"
+  sqlType: persistentStage
   type: sql
   version: 1
 type: Node

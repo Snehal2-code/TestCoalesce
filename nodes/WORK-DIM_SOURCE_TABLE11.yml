@@ -1,6 +1,6 @@
 fileVersion: 1
-id: 89ae96f1-212c-4f9e-98ad-17b90b6c3713
-name: DIM_SOURCE_TABLE3
+id: 87307e64-c7d8-408e-805a-bdc78e77f98c
+name: DIM_SOURCE_TABLE11
 operation:
   config:
     postSQL: ""
@@ -20,22 +20,22 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: 79ae63de-954e-4b9a-b454-19416d187f32
-          stepCounter: 89ae96f1-212c-4f9e-98ad-17b90b6c3713
+          columnCounter: 89d4bc07-b5e8-45d5-8fc5-08e6371af505
+          stepCounter: 87307e64-c7d8-408e-805a-bdc78e77f98c
         config: {}
         dataType: NUMBER
         defaultValue: ""
         description: ""
         isSurrogateKey: true
-        name: "{{ splt_name(node_name) }}"
+        name: TABLE11_KEY
         nullable: true
         sourceColumnReferences:
           - columnReferences: []
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 72980e96-9f47-4c8e-88cc-492cac084c0f
-          stepCounter: 89ae96f1-212c-4f9e-98ad-17b90b6c3713
+          columnCounter: 5957b83f-60cb-4394-835f-eaeb88de12aa
+          stepCounter: 87307e64-c7d8-408e-805a-bdc78e77f98c
         config: {}
         dataType: NUMBER(38,0)
         description: ""
@@ -49,8 +49,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: c45dbbca-4385-43ed-a6e0-7f43cda83f25
-          stepCounter: 89ae96f1-212c-4f9e-98ad-17b90b6c3713
+          columnCounter: bf32c03b-d8c2-42fc-ba5c-35fb90d652e6
+          stepCounter: 87307e64-c7d8-408e-805a-bdc78e77f98c
         config: {}
         dataType: VARCHAR(20)
         description: ""
@@ -63,8 +63,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 6d56bb68-312c-40e5-8c40-9d4185fe0c95
-          stepCounter: 89ae96f1-212c-4f9e-98ad-17b90b6c3713
+          columnCounter: 0190c176-6917-43dd-9052-0ad2fc9eb0a2
+          stepCounter: 87307e64-c7d8-408e-805a-bdc78e77f98c
         config: {}
         dataType: VARCHAR(10)
         description: ""
@@ -77,8 +77,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: e24e4af8-df92-4f46-afd8-b4e4c06d5fe9
-          stepCounter: 89ae96f1-212c-4f9e-98ad-17b90b6c3713
+          columnCounter: fe5b2d85-cb6d-4994-87f6-712941645931
+          stepCounter: 87307e64-c7d8-408e-805a-bdc78e77f98c
         config: {}
         dataType: NUMBER(10,2)
         description: ""
@@ -94,8 +94,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: a69bc4da-4231-4bac-b18b-3df0de454f12
-          stepCounter: 89ae96f1-212c-4f9e-98ad-17b90b6c3713
+          columnCounter: d99739f8-e67b-4279-84fa-eb5bd4239af8
+          stepCounter: 87307e64-c7d8-408e-805a-bdc78e77f98c
         config: {}
         dataType: NUMBER
         defaultValue: ""
@@ -111,8 +111,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: 50ff1e27-a988-4f7c-9b08-d93c98366b46
-          stepCounter: 89ae96f1-212c-4f9e-98ad-17b90b6c3713
+          columnCounter: 9f7a50df-bd62-423f-a808-e8c49fb6fe40
+          stepCounter: 87307e64-c7d8-408e-805a-bdc78e77f98c
         config: {}
         dataType: VARCHAR
         defaultValue: ""
@@ -128,8 +128,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: be4935d9-4d07-4d0d-958a-b3ffb7607188
-          stepCounter: 89ae96f1-212c-4f9e-98ad-17b90b6c3713
+          columnCounter: 50043069-9b8d-4327-8d67-f6a7f3d65396
+          stepCounter: 87307e64-c7d8-408e-805a-bdc78e77f98c
         config: {}
         dataType: TIMESTAMP
         defaultValue: ""
@@ -145,8 +145,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: e43c1c3d-7b0c-456e-917f-0eb132b95838
-          stepCounter: 89ae96f1-212c-4f9e-98ad-17b90b6c3713
+          columnCounter: e552b76b-063d-489c-8ca0-aeb6c34b7921
+          stepCounter: 87307e64-c7d8-408e-805a-bdc78e77f98c
         config: {}
         dataType: TIMESTAMP
         defaultValue: ""
@@ -162,8 +162,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: 857494e9-4b98-45a3-ab2d-ccb16d7f74e2
-          stepCounter: 89ae96f1-212c-4f9e-98ad-17b90b6c3713
+          columnCounter: 2468c806-3eb7-4fbe-8b6e-5e640a7b6b0a
+          stepCounter: 87307e64-c7d8-408e-805a-bdc78e77f98c
         config: {}
         dataType: TIMESTAMP
         defaultValue: ""
@@ -179,8 +179,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: 4708b552-0057-42a1-86e4-ef79d8dca600
-          stepCounter: 89ae96f1-212c-4f9e-98ad-17b90b6c3713
+          columnCounter: ac0a4ee6-d89b-4049-9407-f750af3285db
+          stepCounter: 87307e64-c7d8-408e-805a-bdc78e77f98c
         config: {}
         dataType: TIMESTAMP
         defaultValue: ""
@@ -203,9 +203,9 @@ operation:
             nodeName: SOURCE_TABLE
         join:
           joinCondition: FROM {{ ref('WORK', 'SOURCE_TABLE') }} "SOURCE_TABLE"
-        name: DIM_SOURCE_TABLE3
+        name: DIM_SOURCE_TABLE11
         noLinkRefs: []
-  name: DIM_SOURCE_TABLE3
+  name: DIM_SOURCE_TABLE11
   overrideSQL: false
   schema: ""
   sqlType: "15"

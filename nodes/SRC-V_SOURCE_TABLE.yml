@@ -1,26 +1,23 @@
 fileVersion: 1
-id: 62678567-e9e1-4fe2-8e03-77d5c4f0790f
-name: STG_SOURCE_TABLE_OO
+id: b5b0016a-ba24-4bbb-8bc2-d8e100dd88cf
+name: V_SOURCE_TABLE
 operation:
   config:
-    insertStrategy: INSERT
-    postSQL: ""
-    preSQL: ""
-    testsEnabled: true
-    truncateBefore: true
+    insertStrategy: UNION
+    selectDistinct: false
   database: ""
   deployEnabled: true
   description: ""
   isMultisource: false
-  locationName: WORK
-  materializationType: table
+  locationName: SRC
+  materializationType: view
   metadata:
     appliedNodeTests: []
     columns:
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 2f5190cb-54b5-473a-a20f-fbf36be8bace
-          stepCounter: 62678567-e9e1-4fe2-8e03-77d5c4f0790f
+          columnCounter: a642792c-e929-413f-b375-5901c55cb216
+          stepCounter: b5b0016a-ba24-4bbb-8bc2-d8e100dd88cf
         config: {}
         dataType: NUMBER(38,0)
         description: ""
@@ -33,8 +30,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 3124fd69-63b4-4ba4-9243-61d8f6d18251
-          stepCounter: 62678567-e9e1-4fe2-8e03-77d5c4f0790f
+          columnCounter: cb47e213-c943-4f0e-93ec-03104a4f905b
+          stepCounter: b5b0016a-ba24-4bbb-8bc2-d8e100dd88cf
         config: {}
         dataType: VARCHAR(20)
         description: ""
@@ -47,8 +44,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 73adefeb-8f7f-456e-ad35-f5fc75ee53e7
-          stepCounter: 62678567-e9e1-4fe2-8e03-77d5c4f0790f
+          columnCounter: 87f3fb2c-4e7a-48da-b991-582062a7fb2f
+          stepCounter: b5b0016a-ba24-4bbb-8bc2-d8e100dd88cf
         config: {}
         dataType: VARCHAR(10)
         description: ""
@@ -61,8 +58,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 833dd0db-42d4-41f4-a306-6a0f5403b1a6
-          stepCounter: 62678567-e9e1-4fe2-8e03-77d5c4f0790f
+          columnCounter: 5a2ea749-4231-4050-bc27-a1684b7c1a4a
+          stepCounter: b5b0016a-ba24-4bbb-8bc2-d8e100dd88cf
         config: {}
         dataType: NUMBER(10,2)
         description: ""
@@ -85,12 +82,12 @@ operation:
             nodeName: SOURCE_TABLE
         join:
           joinCondition: FROM {{ ref('WORK', 'SOURCE_TABLE') }} "SOURCE_TABLE"
-        name: STG_SOURCE_TABLE_OO
+        name: V_SOURCE_TABLE
         noLinkRefs: []
-  name: STG_SOURCE_TABLE_OO
+  name: V_SOURCE_TABLE
   overrideSQL: false
   schema: ""
-  sqlType: Stage
+  sqlType: View
   type: sql
   version: 1
 type: Node

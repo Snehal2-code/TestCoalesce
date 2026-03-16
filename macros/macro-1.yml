@@ -1,0 +1,20 @@
+fileVersion: 1
+id: "1"
+macroString: |-
+  {% macro splt_name() %}
+      {% set node_name=node.name %}
+      {% set parts = node_name.split('_') %}
+      {{ parts[-1] ~ '_KEY' }}
+  {% endmacro %}
+
+  {% macro get_current_schema() %}
+      {% set current_location = node.location.name %}
+      
+      {% for loc in storageLocations %}
+          {% if loc.name == current_location %}
+              {{ loc.schema }}
+          {% endif %}
+      {% endfor %}
+  {% endmacro %}
+name: macro
+type: Macro

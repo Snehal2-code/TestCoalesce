@@ -1,0 +1,78 @@
+fileVersion: 1
+id: 50b2f210-aa0b-44ea-8eda-0897e70994a2
+name: V_ORDERS
+operation:
+  config:
+    insertStrategy: UNION
+    selectDistinct: false
+  database: ""
+  deployEnabled: true
+  description: View of customer orders
+  isMultisource: false
+  locationName: SRC
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019cda38-72d3-77dc-8e4e-f320585a18c3
+          stepCounter: 50b2f210-aa0b-44ea-8eda-0897e70994a2
+        config: {}
+        dataType: NUMBER
+        description: ""
+        isBusinessKey: false
+        name: CUSTOMER_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ORDERS.CUSTOMER_ID
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019cda38-72d3-77dc-8e4e-f6f65bd57866
+          stepCounter: 50b2f210-aa0b-44ea-8eda-0897e70994a2
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        isBusinessKey: false
+        name: CUSTOMER_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ORDERS.CUSTOMER_NAME
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019cda38-72d3-77dc-8e4e-fb84ee14e281
+          stepCounter: 50b2f210-aa0b-44ea-8eda-0897e70994a2
+        config: {}
+        dataType: DATE
+        description: ""
+        isBusinessKey: false
+        name: ORDER_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ORDERS.ORDER_DATE
+    cteString: ""
+    description: ""
+    destinationName: ""
+    enabledColumnTestIDs: []
+    materializationOption: ""
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SRC
+            nodeName: ORDERS
+        join:
+          joinCondition: FROM {{ ref('SRC', 'ORDERS') }} ORDERS
+        name: V_ORDERS
+        noLinkRefs: []
+  name: V_ORDERS
+  overrideSQL: false
+  schema: ""
+  sqlType: View
+  type: sql
+  version: 1
+type: Node

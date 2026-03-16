@@ -1,46 +1,23 @@
 fileVersion: 1
-id: 6ad54b45-083e-4da0-b4e4-dc3a7d42f64f
-name: PVT_SOURCE_TABLE_OO
+id: 5333ce1d-4494-41c8-ac55-1f3be420d733
+name: V_SOURCE_TABLE
 operation:
   config:
-    Colvol1: ""
-    aggfunc:
-      items:
-        - {}
-    aggfunc1:
-      items:
-        - funcname1: MAX
-    defaultval: ""
-    defvalue: false
-    excolval: false
-    exlcol:
-      items:
-        - {}
-    inferPivot: false
-    samKeyColval: false
-    sincol: true
-    subqueryval1: ""
-    tabKeyColumn:
-      items:
-        - keyColTextBox: MONTH
-    tabValueColumn:
-      items:
-        - valColTextBox: BALANCE
-    testsEnabled: false
-    trunc: false
+    insertStrategy: UNION
+    selectDistinct: false
   database: ""
   deployEnabled: true
   description: ""
   isMultisource: false
   locationName: WORK
-  materializationType: table
+  materializationType: view
   metadata:
     appliedNodeTests: []
     columns:
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 9300de5e-8a67-4a05-947e-172aa52b2f43
-          stepCounter: 6ad54b45-083e-4da0-b4e4-dc3a7d42f64f
+          columnCounter: 1c018be4-91c2-49dd-9420-0a4c6faed4c3
+          stepCounter: 5333ce1d-4494-41c8-ac55-1f3be420d733
         config: {}
         dataType: NUMBER(38,0)
         description: ""
@@ -53,8 +30,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: e9b52d9c-10eb-4940-ae8a-29a207ba16ac
-          stepCounter: 6ad54b45-083e-4da0-b4e4-dc3a7d42f64f
+          columnCounter: 4c9b5b72-d962-4c88-9647-22b050587ca6
+          stepCounter: 5333ce1d-4494-41c8-ac55-1f3be420d733
         config: {}
         dataType: VARCHAR(20)
         description: ""
@@ -67,8 +44,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 8f51d7f3-e0a3-400f-8fbd-94e41bb37a5b
-          stepCounter: 6ad54b45-083e-4da0-b4e4-dc3a7d42f64f
+          columnCounter: 20f779a7-132f-4626-ac98-f6a180da70b7
+          stepCounter: 5333ce1d-4494-41c8-ac55-1f3be420d733
         config: {}
         dataType: VARCHAR(10)
         description: ""
@@ -81,8 +58,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 6916a038-f3b7-4d96-afd4-b778e8cae14e
-          stepCounter: 6ad54b45-083e-4da0-b4e4-dc3a7d42f64f
+          columnCounter: f6170703-a399-4101-b2a5-82509835cb73
+          stepCounter: 5333ce1d-4494-41c8-ac55-1f3be420d733
         config: {}
         dataType: NUMBER(10,2)
         description: ""
@@ -105,12 +82,12 @@ operation:
             nodeName: SOURCE_TABLE
         join:
           joinCondition: FROM {{ ref('WORK', 'SOURCE_TABLE') }} "SOURCE_TABLE"
-        name: PVT_SOURCE_TABLE_OO
+        name: V_SOURCE_TABLE
         noLinkRefs: []
-  name: PVT_SOURCE_TABLE_OO
+  name: V_SOURCE_TABLE
   overrideSQL: false
   schema: ""
-  sqlType: functional:::409
+  sqlType: View
   type: sql
   version: 1
 type: Node

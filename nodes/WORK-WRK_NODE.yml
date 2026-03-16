@@ -1,0 +1,97 @@
+fileVersion: 1
+id: 9c81a1cc-c600-495c-9dbf-dfe00710904f
+name: WRK_NODE
+operation:
+  config:
+    asofColumn:
+      items:
+        - {}
+    asofJoin: true
+    asofJoinMain: false
+    asofJoinON: false
+    asofJoinUSING: false
+    clusterKey: false
+    clusterKeyConfig:
+      items:
+        - {}
+    clusterKeyConfigExpressions:
+      items:
+        - {}
+    clusterKeyExpressions: false
+    groupByAll: false
+    insertStrategy: INSERT
+    orderby: false
+    orderbycolumn:
+      items:
+        - {}
+    postSQL: ""
+    preSQL: ""
+    selectDistinct: false
+    testsEnabled: false
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: view
+  metadata:
+    appliedNodeTests:
+      - continueOnFailure: false
+        description: ""
+        name: Test
+        runOrder: After
+        templateString: |-
+          SELECT *
+          FROM {{ this }}
+          WHERE STATUS LIKE 'STOP%'
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6cedc533-c960-4e98-81f6-d3c46ad18eab
+          stepCounter: 9c81a1cc-c600-495c-9dbf-dfe00710904f
+        config: {}
+        dataType: VARCHAR
+        defaultValue: ""
+        description: ""
+        keyColumnType: None
+        name: STATUS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: "0"
+                stepCounter: "0"
+            transform: ""
+        systemColumnType: None
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: |-
+            {{ stage('Override Create SQL', deploy_phase_override="create") }}
+            CREATE OR REPLACE VIEW {{ ref('WORK', 'WRK_NODE')}} AS (
+
+                SELECT 
+                    CASE 
+                        WHEN COUNT(*) = 0 THEN 'STOP: SOURCE_DATA_NOT_READY'
+                        ELSE 'OK'
+                    END AS STATUS
+                FROM {{ ref('SOURCE', 'SOURCE_TABLE') }}
+
+            )
+        dependencies: []
+        join:
+          joinCondition: ""
+        name: WRK_NODE
+        noLinkRefs: []
+  name: WRK_NODE
+  overrideSQL: true
+  schema: ""
+  sqlType: AdvancedDeploy:::179
+  type: sql
+  version: 1
+type: Node

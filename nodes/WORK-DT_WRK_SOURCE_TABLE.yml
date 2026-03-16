@@ -1,46 +1,53 @@
 fileVersion: 1
-id: 1c309fdf-fdfa-4583-a7c6-21009b1b08ad
-name: PVT_SOURCE_TABLE_O
+id: 92e6f27f-c702-42e4-ab64-21a733d48319
+name: DT_WRK_SOURCE_TABLE
 operation:
   config:
-    Colvol1: ""
-    aggfunc:
+    advanceWarehouse: false
+    backfill: false
+    backfillSource: ""
+    backfillSourceSchema: ""
+    clusterKey: false
+    clusterKeyConfig:
       items:
         - {}
-    aggfunc1:
-      items:
-        - funcname1: MAX
-    defaultval: ""
-    defvalue: false
-    excolval: false
-    exlcol:
+    clusterKeyConfigExpressions:
       items:
         - {}
-    inferPivot: false
-    samKeyColval: false
-    sincol: true
-    subqueryval1: ""
-    tabKeyColumn:
+    clusterKeyExpressions: false
+    cpygrants: false
+    downstreamOption: false
+    groupByAll: false
+    immutabilityConstraint: false
+    immutableExpression: ""
+    initialize: ON_CREATE
+    initializeWarehouseSize: ""
+    insertStrategy: UNION ALL
+    lagSpecification:
       items:
-        - keyColTextBox: MONTH
-    tabValueColumn:
-      items:
-        - valColTextBox: BALANCE
-    testsEnabled: false
-    trunc: false
+        - lagPeriod: Minutes
+          lagValue: "60"
+    refreshWarehouseSize: ""
+    refresh_mode: AUTO
+    selectDistinct: false
+    timeTravel: false
+    timeTravelreference: ""
+    timeTraveltype: ""
+    timeTravelvalue: ""
+    warehouseName: dev_wh_xs
   database: ""
   deployEnabled: true
   description: ""
   isMultisource: false
   locationName: WORK
-  materializationType: table
+  materializationType: dynamic table
   metadata:
     appliedNodeTests: []
     columns:
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: ff2b493a-f354-4f1e-bbbf-002daa670692
-          stepCounter: 1c309fdf-fdfa-4583-a7c6-21009b1b08ad
+          columnCounter: fc70df24-e3f3-4234-8e13-3134358b1175
+          stepCounter: 92e6f27f-c702-42e4-ab64-21a733d48319
         config: {}
         dataType: NUMBER(38,0)
         description: ""
@@ -53,8 +60,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: b2bb5c97-d677-46e1-9cab-d20144006b9f
-          stepCounter: 1c309fdf-fdfa-4583-a7c6-21009b1b08ad
+          columnCounter: 13295cf8-86bf-44cc-8c67-7c2a82325d81
+          stepCounter: 92e6f27f-c702-42e4-ab64-21a733d48319
         config: {}
         dataType: VARCHAR(20)
         description: ""
@@ -67,8 +74,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: ea80ee93-a951-487b-a4f1-15fc4bafecec
-          stepCounter: 1c309fdf-fdfa-4583-a7c6-21009b1b08ad
+          columnCounter: 664a9e94-ca53-4a72-b519-83dbc52bc0f2
+          stepCounter: 92e6f27f-c702-42e4-ab64-21a733d48319
         config: {}
         dataType: VARCHAR(10)
         description: ""
@@ -81,8 +88,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 862b508c-50ea-4813-b64e-0277da41c76d
-          stepCounter: 1c309fdf-fdfa-4583-a7c6-21009b1b08ad
+          columnCounter: 702a6f61-9dac-419c-b13e-ca861cd0e0dd
+          stepCounter: 92e6f27f-c702-42e4-ab64-21a733d48319
         config: {}
         dataType: NUMBER(10,2)
         description: ""
@@ -105,12 +112,12 @@ operation:
             nodeName: SOURCE_TABLE
         join:
           joinCondition: FROM {{ ref('WORK', 'SOURCE_TABLE') }} "SOURCE_TABLE"
-        name: PVT_SOURCE_TABLE_O
+        name: DT_WRK_SOURCE_TABLE
         noLinkRefs: []
-  name: PVT_SOURCE_TABLE_O
+  name: DT_WRK_SOURCE_TABLE
   overrideSQL: false
   schema: ""
-  sqlType: functional:::409
+  sqlType: DynamicTable:::347
   type: sql
   version: 1
 type: Node
