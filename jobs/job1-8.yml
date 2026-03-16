@@ -1,0 +1,6 @@
+excludeSelector: ""
+fileVersion: 1
+id: "8"
+includeSelector: "{ subgraph: \"NODE\" }"
+name: job1
+type: Job
