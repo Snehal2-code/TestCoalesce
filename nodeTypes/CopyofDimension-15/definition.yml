@@ -10,6 +10,7 @@ metadata:
     tagColor: '#1E339A'
     plural: Dimensions
 
+    isColumnResyncEnabled: true
     config:
     - groupName: Options
       items:
