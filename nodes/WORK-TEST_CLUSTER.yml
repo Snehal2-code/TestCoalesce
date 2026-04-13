@@ -1,0 +1,73 @@
+fileVersion: 1
+id: 578c43a3-14c4-4cd4-a7da-7445178cb976
+name: TEST_CLUSTER
+operation:
+  database: ""
+  deployEnabled: true
+  description: ""
+  locationName: WORK
+  metadata:
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 669e6b22-7f15-451b-b7b5-89a280eed881
+          stepCounter: 578c43a3-14c4-4cd4-a7da-7445178cb976
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 987e79a1-060b-4d35-ae7b-7bab67f8b663
+          stepCounter: 578c43a3-14c4-4cd4-a7da-7445178cb976
+        config: {}
+        dataType: DATE
+        defaultValue: ""
+        description: ""
+        name: SNAPSHOT_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b1d4c5fd-3092-445f-bbe6-8bcf591824f0
+          stepCounter: 578c43a3-14c4-4cd4-a7da-7445178cb976
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: VALUE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+  name: TEST_CLUSTER
+  schema: ""
+  sqlType: Source
+  type: sourceInput
+  version: 1
+type: Node
