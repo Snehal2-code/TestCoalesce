@@ -1,0 +1,109 @@
+fileVersion: 1
+id: 04228836-cbd7-4dc6-a334-c2f1d20e5562
+name: DT_WRK_TEST_CLUSTER
+operation:
+  config:
+    advanceWarehouse: false
+    backfill: false
+    backfillSource: ""
+    backfillSourceSchema: ""
+    clusterKey: false
+    clusterKeyConfig:
+      items:
+        - {}
+    clusterKeyConfigExpressions:
+      items:
+        - {}
+    clusterKeyExpressions: false
+    cpygrants: false
+    downstreamOption: false
+    groupByAll: false
+    immutabilityConstraint: false
+    immutableExpression: ""
+    initialize: ON_CREATE
+    initializeWarehouseSize: ""
+    insertStrategy: UNION ALL
+    lagSpecification:
+      items:
+        - lagPeriod: Minutes
+          lagValue: "60"
+    refreshWarehouseSize: ""
+    refresh_mode: AUTO
+    selectDistinct: false
+    timeTravel: false
+    timeTravelreference: ""
+    timeTraveltype: ""
+    timeTravelvalue: ""
+    warehouseName: compute_wh
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: dynamic table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 04700ee8-f208-4b0a-b40f-8bfe1911af32
+          stepCounter: 04228836-cbd7-4dc6-a334-c2f1d20e5562
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 669e6b22-7f15-451b-b7b5-89a280eed881
+                stepCounter: 578c43a3-14c4-4cd4-a7da-7445178cb976
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 76229c5c-835c-4adb-a5eb-e403777a5b81
+          stepCounter: 04228836-cbd7-4dc6-a334-c2f1d20e5562
+        config: {}
+        dataType: DATE
+        description: ""
+        name: SNAPSHOT_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 987e79a1-060b-4d35-ae7b-7bab67f8b663
+                stepCounter: 578c43a3-14c4-4cd4-a7da-7445178cb976
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 933d2c7e-86f0-4836-83d2-65beeb17e897
+          stepCounter: 04228836-cbd7-4dc6-a334-c2f1d20e5562
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: ""
+        name: VALUE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b1d4c5fd-3092-445f-bbe6-8bcf591824f0
+                stepCounter: 578c43a3-14c4-4cd4-a7da-7445178cb976
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          TEST_CLUSTER: 578c43a3-14c4-4cd4-a7da-7445178cb976
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WORK
+            nodeName: TEST_CLUSTER
+        join:
+          joinCondition: FROM {{ ref('WORK', 'TEST_CLUSTER') }} "TEST_CLUSTER"
+        name: DT_WRK_TEST_CLUSTER
+        noLinkRefs: []
+  name: DT_WRK_TEST_CLUSTER
+  overrideSQL: false
+  schema: ""
+  sqlType: DynamicTable:::347
+  type: sql
+  version: 1
+type: Node
