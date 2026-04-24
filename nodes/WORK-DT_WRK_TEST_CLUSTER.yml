@@ -16,7 +16,7 @@ operation:
         - {}
     clusterKeyExpressions: false
     cpygrants: false
-    downstreamOption: false
+    downstreamOption: true
     groupByAll: false
     immutabilityConstraint: false
     immutableExpression: ""
@@ -90,14 +90,19 @@ operation:
     enabledColumnTestIDs: []
     sourceMapping:
       - aliases:
+          SOURCE_TABLE: a96b87d0-958f-4159-bb86-5f1bf6eb7990
           TEST_CLUSTER: 578c43a3-14c4-4cd4-a7da-7445178cb976
         customSQL:
           customSQL: ""
         dependencies:
           - locationName: WORK
+            nodeName: SOURCE_TABLE
+          - locationName: WORK
             nodeName: TEST_CLUSTER
         join:
-          joinCondition: FROM {{ ref('WORK', 'TEST_CLUSTER') }} "TEST_CLUSTER"
+          joinCondition: |-
+            FROM {{ ref('WORK', 'TEST_CLUSTER') }} "TEST_CLUSTER"
+            INNER JOIN {{ ref('WORK', 'SOURCE_TABLE') }} "SOURCE_TABLE"
         name: DT_WRK_TEST_CLUSTER
         noLinkRefs: []
   name: DT_WRK_TEST_CLUSTER

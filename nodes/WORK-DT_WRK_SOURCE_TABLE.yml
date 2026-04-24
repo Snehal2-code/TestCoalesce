@@ -111,7 +111,9 @@ operation:
           - locationName: WORK
             nodeName: SOURCE_TABLE
         join:
-          joinCondition: FROM {{ ref('WORK', 'SOURCE_TABLE') }} "SOURCE_TABLE"
+          joinCondition: |-
+            FROM {{ ref('WORK', 'SOURCE_TABLE') }} "SOURCE_TABLE"
+            INNER {{ ref('WORK', 'SOURCE_TABLE') }} "SOURCE_TABLE"
         name: DT_WRK_SOURCE_TABLE
         noLinkRefs: []
   name: DT_WRK_SOURCE_TABLE
