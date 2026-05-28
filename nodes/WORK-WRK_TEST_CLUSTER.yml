@@ -83,7 +83,9 @@ operation:
           - locationName: WORK
             nodeName: TEST_CLUSTER
         join:
-          joinCondition: FROM  {{ ref('WORK', 'TEST_CLUSTER') }} TEST_CLUSTER
+          joinCondition: |-
+            FROM  {{ ref('WORK', 'TEST_CLUSTER') }} TEST_CLUSTER
+            WHERE UPPER('{{parameters.force_reload.FACT_MEASUREMENT_READING}}')='Y'
         name: WRK_TEST_CLUSTER
         noLinkRefs: []
   name: WRK_TEST_CLUSTER
