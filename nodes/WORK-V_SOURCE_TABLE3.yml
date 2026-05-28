@@ -1,0 +1,99 @@
+fileVersion: 1
+id: 5ef38a57-0b20-4283-9e3f-f95cb0df4263
+name: V_SOURCE_TABLE3
+operation:
+  config:
+    insertStrategy: UNION
+    selectDistinct: false
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e84febb8-da1d-4a37-8fed-6213782643f6
+          stepCounter: 5ef38a57-0b20-4283-9e3f-f95cb0df4263
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: ACCOUNT_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a67d5f8f-4584-4b94-b031-6b4219d1ad59
+                stepCounter: 7369463f-5dc6-4031-a099-9b565983c87c
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e9e93738-4772-4473-a106-58cc28f92a45
+          stepCounter: 5ef38a57-0b20-4283-9e3f-f95cb0df4263
+        config: {}
+        dataType: VARCHAR(20)
+        description: ""
+        name: STATUS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 796bb947-9082-4d91-a7c9-8ddb231b7112
+                stepCounter: 7369463f-5dc6-4031-a099-9b565983c87c
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: cac41946-7bde-472c-b1b9-961e3d382958
+          stepCounter: 5ef38a57-0b20-4283-9e3f-f95cb0df4263
+        config: {}
+        dataType: VARCHAR(10)
+        description: ""
+        name: MONTH
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3b944f90-7dd4-4bb2-9373-33d0ae153261
+                stepCounter: 7369463f-5dc6-4031-a099-9b565983c87c
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 059b5891-b36d-4db1-b594-de22524e5105
+          stepCounter: 5ef38a57-0b20-4283-9e3f-f95cb0df4263
+        config: {}
+        dataType: NUMBER(10,2)
+        description: ""
+        name: BALANCE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a9d51c0e-44ca-427b-9274-5154a1d6d630
+                stepCounter: 7369463f-5dc6-4031-a099-9b565983c87c
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          SOURCE_TABLE: a96b87d0-958f-4159-bb86-5f1bf6eb7990
+          STG_SOURCE_TABLE: 7369463f-5dc6-4031-a099-9b565983c87c
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WORK
+            nodeName: SOURCE_TABLE
+          - locationName: WORK
+            nodeName: STG_SOURCE_TABLE
+        join:
+          joinCondition: |-
+            FROM {{ ref('WORK', 'STG_SOURCE_TABLE') }} "STG_SOURCE_TABLE"
+            join {{ ref('WORK', 'SOURCE_TABLE') }} "SOURCE_TABLE"
+            on "STG_SOURCE_TABLE"."ACCOUNT_ID">= "SOURCE_TABLE"."ACCOUNT_ID"
+        name: V_SOURCE_TABLE3
+        noLinkRefs: []
+  name: V_SOURCE_TABLE3
+  overrideSQL: false
+  schema: ""
+  sqlType: View
+  type: sql
+  version: 1
+type: Node

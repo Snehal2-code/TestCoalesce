@@ -1,6 +1,6 @@
 fileVersion: 1
-id: bc811920-7b39-4b1f-a0b7-be8197f1403e
-name: V_SOURCE_TABLE1
+id: 140479f4-32b3-4217-a781-b3fea673a692
+name: V_SOURCE_TABLE2
 operation:
   config:
     insertStrategy: UNION
@@ -16,8 +16,8 @@ operation:
     columns:
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 7a5780bc-38da-48e5-bd30-3a0e9d44568a
-          stepCounter: bc811920-7b39-4b1f-a0b7-be8197f1403e
+          columnCounter: db514ed8-0160-4646-9e2a-497ab6a2f73f
+          stepCounter: 140479f4-32b3-4217-a781-b3fea673a692
         config: {}
         dataType: NUMBER(38,0)
         description: ""
@@ -30,8 +30,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 78804451-5662-4b3d-8fcd-5f3e45610c51
-          stepCounter: bc811920-7b39-4b1f-a0b7-be8197f1403e
+          columnCounter: fffe8cc0-c03c-4f54-8a81-0c50d0d10270
+          stepCounter: 140479f4-32b3-4217-a781-b3fea673a692
         config: {}
         dataType: VARCHAR(20)
         description: ""
@@ -44,8 +44,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 5e60069f-dba5-4f6b-a07b-d2237f5f312b
-          stepCounter: bc811920-7b39-4b1f-a0b7-be8197f1403e
+          columnCounter: 29402bdd-6a22-4866-a083-d059b99a4e04
+          stepCounter: 140479f4-32b3-4217-a781-b3fea673a692
         config: {}
         dataType: VARCHAR(10)
         description: ""
@@ -58,8 +58,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: dd6de626-c064-4b62-b6f9-f2c25d4cc42a
-          stepCounter: bc811920-7b39-4b1f-a0b7-be8197f1403e
+          columnCounter: 1cf75db2-4312-4032-9c92-0a27dd711ed3
+          stepCounter: 140479f4-32b3-4217-a781-b3fea673a692
         config: {}
         dataType: NUMBER(10,2)
         description: ""
@@ -74,17 +74,24 @@ operation:
     enabledColumnTestIDs: []
     sourceMapping:
       - aliases:
+          SOURCE_TABLE: a96b87d0-958f-4159-bb86-5f1bf6eb7990
           STG_SOURCE_TABLE: 7369463f-5dc6-4031-a099-9b565983c87c
         customSQL:
           customSQL: ""
         dependencies:
           - locationName: WORK
+            nodeName: SOURCE_TABLE
+          - locationName: WORK
             nodeName: STG_SOURCE_TABLE
         join:
-          joinCondition: FROM {{ ref('WORK', 'STG_SOURCE_TABLE') }} "STG_SOURCE_TABLE"
-        name: V_SOURCE_TABLE1
+          joinCondition: |-
+            FROM {{ ref('WORK', 'STG_SOURCE_TABLE') }} "STG_SOURCE_TABLE"
+            join 
+            {{ ref('WORK', 'SOURCE_TABLE') }} "SOURCE_TABLE"
+            on "STG_SOURCE_TABLE"."ACCOUNT_ID"= "SOURCE_TABLE"."ACCOUNT_ID"
+        name: V_SOURCE_TABLE2
         noLinkRefs: []
-  name: V_SOURCE_TABLE1
+  name: V_SOURCE_TABLE2
   overrideSQL: false
   schema: ""
   sqlType: View
