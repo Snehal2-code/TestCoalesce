@@ -1,0 +1,84 @@
+fileVersion: 1
+id: 3781b48f-715b-46d2-bd38-7b38cfe0e611
+name: STG_TEST_CLUSTER_2
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 659f6f03-33df-4d17-8a50-e676db1000af
+          stepCounter: 3781b48f-715b-46d2-bd38-7b38cfe0e611
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 669e6b22-7f15-451b-b7b5-89a280eed881
+                stepCounter: 578c43a3-14c4-4cd4-a7da-7445178cb976
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4758db04-0e13-4427-8e54-c26d16dc6be7
+          stepCounter: 3781b48f-715b-46d2-bd38-7b38cfe0e611
+        config: {}
+        dataType: DATE
+        description: ""
+        name: SNAPSHOT_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 987e79a1-060b-4d35-ae7b-7bab67f8b663
+                stepCounter: 578c43a3-14c4-4cd4-a7da-7445178cb976
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ec9fc5c8-b92d-4787-856e-5bf1ed8778cf
+          stepCounter: 3781b48f-715b-46d2-bd38-7b38cfe0e611
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: ""
+        name: VALUE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b1d4c5fd-3092-445f-bbe6-8bcf591824f0
+                stepCounter: 578c43a3-14c4-4cd4-a7da-7445178cb976
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          TEST_CLUSTER: 578c43a3-14c4-4cd4-a7da-7445178cb976
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WORK
+            nodeName: TEST_CLUSTER
+        join:
+          joinCondition: |-
+            FROM {{ ref('WORK', 'TEST_CLUSTER') }} "TEST_CLUSTER"
+            WHERE UPPER('{{parameters.force_reload.FACT_MEASUREMENT_READING}}')='Y'
+        name: STG_TEST_CLUSTER_2
+        noLinkRefs: []
+  name: STG_TEST_CLUSTER_2
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node
