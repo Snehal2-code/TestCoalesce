@@ -16,7 +16,7 @@ operation:
     orderbycolumn:
       items:
         - {}
-    postSQL: CALL SNEHAL_DB.PUBLIC.TEST_PARAM_SP('{{ parameters["test_param"] }}');
+    postSQL: CALL SNEHAL_DB.PUBLIC.TEST_PARAM_SP('{{ parameters["TEST_PARAM"] }}');
     preSQL: |-
       CREATE OR REPLACE PROCEDURE SNEHAL_DB.PUBLIC.TEST_PARAM_SP(X STRING)
       RETURNS STRING
