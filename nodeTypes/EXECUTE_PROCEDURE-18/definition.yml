@@ -1,0 +1,15 @@
+fileVersion: 1
+id: "18"
+isDisabled: false
+metadata:
+  defaultStorageLocation: null
+  error: null
+  nodeMetadataSpec: |-
+    capitalized: Execute Procedure
+    short: EXE
+    plural: Execute Procedures
+    tagColor: '#2EB67D'
+
+    config: []
+name: EXECUTE_PROCEDURE
+type: NodeType

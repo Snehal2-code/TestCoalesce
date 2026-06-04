@@ -1,0 +1,78 @@
+fileVersion: 1
+id: 87e2cb67-762f-4332-a0c0-57a8111a3904
+name: WRK_TEST_CLUSTER_copy
+operation:
+  config:
+    testsEnabled: false
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3868e22c-6083-49de-9eb5-f8ad86ec0243
+          stepCounter: 87e2cb67-762f-4332-a0c0-57a8111a3904
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 669e6b22-7f15-451b-b7b5-89a280eed881
+                stepCounter: 578c43a3-14c4-4cd4-a7da-7445178cb976
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4227cf35-fdbd-4d0b-bdc7-ed088e3f86a8
+          stepCounter: 87e2cb67-762f-4332-a0c0-57a8111a3904
+        config: {}
+        dataType: DATE
+        description: ""
+        name: SNAPSHOT_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 987e79a1-060b-4d35-ae7b-7bab67f8b663
+                stepCounter: 578c43a3-14c4-4cd4-a7da-7445178cb976
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ac65e828-47e9-45a7-b5a0-0d89d160df35
+          stepCounter: 87e2cb67-762f-4332-a0c0-57a8111a3904
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: ""
+        name: VALUE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b1d4c5fd-3092-445f-bbe6-8bcf591824f0
+                stepCounter: 578c43a3-14c4-4cd4-a7da-7445178cb976
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          TEST_CLUSTER: 578c43a3-14c4-4cd4-a7da-7445178cb976
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WORK
+            nodeName: TEST_CLUSTER
+        join:
+          joinCondition: FROM {{ ref('WORK', 'TEST_CLUSTER') }} "TEST_CLUSTER"
+        name: WRK_TEST_CLUSTER_copy
+        noLinkRefs: []
+  name: WRK_TEST_CLUSTER_copy
+  overrideSQL: false
+  schema: ""
+  sqlType: "18"
+  type: sql
+  version: 1
+type: Node
