@@ -1,0 +1,124 @@
+fileVersion: 1
+id: 8da41710-18a6-40b4-b3ec-5c74747fbbab
+name: FCT_TEST_CLUSTER
+operation:
+  config:
+    groupByAll: false
+    insertStrategy: UNION ALL
+    lastModifiedComparison: false
+    orderby: false
+    orderbycolumn:
+      items:
+        - {}
+    postSQL: ""
+    preSQL: ""
+    selectDistinct: false
+    testsEnabled: false
+    treatNullAsCurrentTimestamp: false
+    truncateBefore: false
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: SRC
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 995644f6-d18e-4b4a-b00a-e09af5eb28d4
+          stepCounter: 8da41710-18a6-40b4-b3ec-5c74747fbbab
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 669e6b22-7f15-451b-b7b5-89a280eed881
+                stepCounter: 578c43a3-14c4-4cd4-a7da-7445178cb976
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c81b10da-a9e3-42b3-973a-a8aebd7dfe50
+          stepCounter: 8da41710-18a6-40b4-b3ec-5c74747fbbab
+        config: {}
+        dataType: DATE
+        description: ""
+        name: SNAPSHOT_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 987e79a1-060b-4d35-ae7b-7bab67f8b663
+                stepCounter: 578c43a3-14c4-4cd4-a7da-7445178cb976
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ae65ab76-c12b-47a2-9959-d0d0b7683f3c
+          stepCounter: 8da41710-18a6-40b4-b3ec-5c74747fbbab
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: ""
+        name: VALUE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b1d4c5fd-3092-445f-bbe6-8bcf591824f0
+                stepCounter: 578c43a3-14c4-4cd4-a7da-7445178cb976
+            transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 17646054-a247-493f-bf8e-1b1c86a89ab2
+          stepCounter: 8da41710-18a6-40b4-b3ec-5c74747fbbab
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        isSystemCreateDate: true
+        name: SYSTEM_CREATE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 48b6d322-00e9-4217-9819-86b4ca482517
+          stepCounter: 8da41710-18a6-40b4-b3ec-5c74747fbbab
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        isSystemUpdateDate: true
+        name: SYSTEM_UPDATE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          TEST_CLUSTER: 578c43a3-14c4-4cd4-a7da-7445178cb976
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WORK
+            nodeName: TEST_CLUSTER
+        join:
+          joinCondition: FROM {{ ref('WORK', 'TEST_CLUSTER') }} "TEST_CLUSTER"
+        name: FCT_TEST_CLUSTER
+        noLinkRefs: []
+  name: FCT_TEST_CLUSTER
+  overrideSQL: false
+  schema: ""
+  sqlType: BaseNodeTypes:::205
+  type: sql
+  version: 1
+type: Node
