@@ -1,0 +1,104 @@
+fileVersion: 1
+id: b5eb7140-09cd-4c82-aafe-660e992e6094
+name: WRK_TEST_CLUSTER5
+operation:
+  config:
+    asofColumn:
+      items:
+        - {}
+    asofJoin: true
+    asofJoinMain: false
+    asofJoinON: false
+    asofJoinUSING: false
+    groupByAll: false
+    insertStrategy: INSERT
+    orderby: false
+    orderbycolumn:
+      items:
+        - {}
+    postSQL: CALL SNEHAL_DB.PUBLIC.TEST_PARAM_SP('{{ parameters.test_param }}');
+    preSQL: |-
+      CREATE OR REPLACE PROCEDURE SNEHAL_DB.PUBLIC.TEST_PARAM_SP(X STRING)
+      RETURNS STRING
+      LANGUAGE SQL
+      AS
+      $$
+      BEGIN
+      RETURN X;
+      END;
+      $$;
+    selectDistinct: false
+    testsEnabled: false
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0bf1bd4f-82ee-46ad-b911-0cd786c6dded
+          stepCounter: b5eb7140-09cd-4c82-aafe-660e992e6094
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 669e6b22-7f15-451b-b7b5-89a280eed881
+                stepCounter: 578c43a3-14c4-4cd4-a7da-7445178cb976
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4f108b0c-4fb5-400a-9701-444c8bad9ccc
+          stepCounter: b5eb7140-09cd-4c82-aafe-660e992e6094
+        config: {}
+        dataType: DATE
+        description: ""
+        name: SNAPSHOT_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 987e79a1-060b-4d35-ae7b-7bab67f8b663
+                stepCounter: 578c43a3-14c4-4cd4-a7da-7445178cb976
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5c3793b7-b76d-45fe-b303-f5fb071d2ece
+          stepCounter: b5eb7140-09cd-4c82-aafe-660e992e6094
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: ""
+        name: VALUE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b1d4c5fd-3092-445f-bbe6-8bcf591824f0
+                stepCounter: 578c43a3-14c4-4cd4-a7da-7445178cb976
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          TEST_CLUSTER: 578c43a3-14c4-4cd4-a7da-7445178cb976
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WORK
+            nodeName: TEST_CLUSTER
+        join:
+          joinCondition: FROM  {{ ref('WORK', 'TEST_CLUSTER') }} TEST_CLUSTER
+        name: WRK_TEST_CLUSTER5
+        noLinkRefs: []
+  name: WRK_TEST_CLUSTER5
+  overrideSQL: false
+  schema: ""
+  sqlType: BaseNodeTypes:::204
+  type: sql
+  version: 1
+type: Node

@@ -20,7 +20,7 @@ operation:
   deployEnabled: true
   description: ""
   isMultisource: false
-  locationName: SRC
+  locationName: WORK
   materializationType: table
   metadata:
     appliedNodeTests: []
