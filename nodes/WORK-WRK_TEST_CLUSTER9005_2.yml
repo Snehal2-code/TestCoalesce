@@ -17,9 +17,7 @@ operation:
       items:
         - {}
     postSQL: ""
-    preSQL: |-
-      SELECT
-      '{{ parameters.test.sample_param.value }}' AS TEST_VALUE
+    preSQL: ""
     selectDistinct: false
     testsEnabled: false
     truncateBefore: true
@@ -73,7 +71,7 @@ operation:
           - columnReferences:
               - columnCounter: b1d4c5fd-3092-445f-bbe6-8bcf591824f0
                 stepCounter: 578c43a3-14c4-4cd4-a7da-7445178cb976
-            transform: ""
+            transform: "'{{ parameters.test.sample_param.value }}'"
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
