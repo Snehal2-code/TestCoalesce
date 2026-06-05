@@ -1,0 +1,97 @@
+fileVersion: 1
+id: aef748be-4e0a-4c97-91e3-a0507be0f3a0
+name: WRK_TEST_CLUSTER_9005
+operation:
+  config:
+    asofColumn:
+      items:
+        - {}
+    asofJoin: true
+    asofJoinMain: false
+    asofJoinON: false
+    asofJoinUSING: false
+    groupByAll: false
+    insertStrategy: INSERT
+    orderby: false
+    orderbycolumn:
+      items:
+        - {}
+    postSQL: ""
+    preSQL: |-
+      SELECT
+      '{{ parameters.test.sample_param.value }}' AS TEST_VALUE
+    selectDistinct: false
+    testsEnabled: false
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d4dd456a-c7cf-43b3-98fd-fe79bf135628
+          stepCounter: aef748be-4e0a-4c97-91e3-a0507be0f3a0
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 669e6b22-7f15-451b-b7b5-89a280eed881
+                stepCounter: 578c43a3-14c4-4cd4-a7da-7445178cb976
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5545bc9b-e3b3-4aff-bbca-aa4e671f8540
+          stepCounter: aef748be-4e0a-4c97-91e3-a0507be0f3a0
+        config: {}
+        dataType: DATE
+        description: ""
+        name: SNAPSHOT_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 987e79a1-060b-4d35-ae7b-7bab67f8b663
+                stepCounter: 578c43a3-14c4-4cd4-a7da-7445178cb976
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 20ada409-1ff5-41f8-bccf-102eaa9564c1
+          stepCounter: aef748be-4e0a-4c97-91e3-a0507be0f3a0
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: ""
+        name: VALUE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b1d4c5fd-3092-445f-bbe6-8bcf591824f0
+                stepCounter: 578c43a3-14c4-4cd4-a7da-7445178cb976
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          TEST_CLUSTER: 578c43a3-14c4-4cd4-a7da-7445178cb976
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WORK
+            nodeName: TEST_CLUSTER
+        join:
+          joinCondition: FROM  {{ ref('WORK', 'TEST_CLUSTER') }} TEST_CLUSTER
+        name: WRK_TEST_CLUSTER_9005
+        noLinkRefs: []
+  name: WRK_TEST_CLUSTER_9005
+  overrideSQL: false
+  schema: ""
+  sqlType: BaseNodeTypes:::204
+  type: sql
+  version: 1
+type: Node
