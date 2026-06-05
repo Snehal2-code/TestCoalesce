@@ -1,0 +1,6 @@
+excludeSelector: ""
+fileVersion: 1
+id: "10"
+includeSelector: "{ location: \"WORK\" name: \"WRK_TEST_CLUSTER9005_2\" } OR { location: \"WORK\" name: \"TEST_CLUSTER\" } OR { location: \"WORK\" name: \"WRK_TEST_CLUSTER_des_1\" }"
+name: job2
+type: Job
