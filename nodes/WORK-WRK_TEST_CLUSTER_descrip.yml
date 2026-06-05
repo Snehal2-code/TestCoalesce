@@ -71,7 +71,7 @@ operation:
           - columnReferences:
               - columnCounter: b1d4c5fd-3092-445f-bbe6-8bcf591824f0
                 stepCounter: 578c43a3-14c4-4cd4-a7da-7445178cb976
-            transform: "'{{ parameters.test.sample_param.value }}'"
+            transform: CASE WHEN 'EST' IN {{ parameters.test.sample_param.value }} THEN 'ONE' ELSE 'TWO' END
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
