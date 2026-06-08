@@ -1,0 +1,124 @@
+fileVersion: 1
+id: abaa5c9c-1830-496a-ac22-18bf16e1138b
+name: STG_ORDERS_US
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c88ec06e-1354-443e-923f-a6aa1d085267
+          stepCounter: abaa5c9c-1830-496a-ac22-18bf16e1138b
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: ORDER_ID
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 27bb85b2-690f-4ef6-b0c5-237b82cf11b4
+                stepCounter: 34a76055-f812-442f-8424-f621af310a05
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 708dee6b-20b9-445d-b825-7dcd0c242056
+          stepCounter: abaa5c9c-1830-496a-ac22-18bf16e1138b
+        config: {}
+        dataType: DATE
+        description: ""
+        name: ORDER_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fbbb3155-c6b7-445c-b096-f0e4e8ebce03
+                stepCounter: 34a76055-f812-442f-8424-f621af310a05
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b435c211-313f-441a-ba56-9d3640473f49
+          stepCounter: abaa5c9c-1830-496a-ac22-18bf16e1138b
+        config: {}
+        dataType: VARCHAR(50)
+        description: ""
+        name: CUSTOMER_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 273f8757-b6a0-4ccf-9434-6dc165efcdd8
+                stepCounter: 34a76055-f812-442f-8424-f621af310a05
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4ecbf3dd-48be-41bd-89e5-a3603418feee
+          stepCounter: abaa5c9c-1830-496a-ac22-18bf16e1138b
+        config: {}
+        dataType: VARCHAR(5000)
+        description: ""
+        name: TOTAL
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: dc351172-0e31-4a31-bb16-7e17c76d0f2d
+                stepCounter: 34a76055-f812-442f-8424-f621af310a05
+            transform: CASE WHEN 'EST' IN {{ parameters.test.sample_param.value }} THEN 'ONE' ELSE 'TWO' END
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 176896ee-c5eb-47bb-a7ce-dbc84c8b6566
+          stepCounter: abaa5c9c-1830-496a-ac22-18bf16e1138b
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7d1f0bec-77f5-42e2-9c78-09865967d9f9
+                stepCounter: 34a76055-f812-442f-8424-f621af310a05
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 38aa9819-127d-4f93-acb5-8efdd931e6eb
+          stepCounter: abaa5c9c-1830-496a-ac22-18bf16e1138b
+        config: {}
+        dataType: TIMESTAMP_TZ(9)
+        description: ""
+        name: TIMESTAMP_
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8ee0be02-685b-4f36-915d-f0cb66a67ef1
+                stepCounter: 34a76055-f812-442f-8424-f621af310a05
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          ORDERS_US: 34a76055-f812-442f-8424-f621af310a05
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WORK
+            nodeName: ORDERS_US
+        join:
+          joinCondition: FROM {{ ref('WORK', 'ORDERS_US') }} "ORDERS_US"
+        name: STG_ORDERS_US
+        noLinkRefs: []
+  name: STG_ORDERS_US
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node
