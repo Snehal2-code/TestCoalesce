@@ -1,0 +1,6 @@
+@id("6a20f655-d590-477f-87a0-7999a34a68e2")
+@nodeType("20")
+
+SELECT
+    COLLATE("VALUE", 'en-cs')::VARCHAR(20) AS "VALUE"
+FROM {{ ref('WORK', 'TEST_CLUSTER') }} "TEST_CLUSTER"
