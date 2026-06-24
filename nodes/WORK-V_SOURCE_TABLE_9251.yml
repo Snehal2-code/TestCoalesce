@@ -83,7 +83,7 @@ operation:
         join:
           joinCondition: |-
             FROM {{ ref('WORK', 'STG_SOURCE_TABLE') }} "STG_SOURCE_TABLE"
-            where 0=1
+            where 1=1
         name: V_SOURCE_TABLE_9251
         noLinkRefs: []
   name: V_SOURCE_TABLE_9251
