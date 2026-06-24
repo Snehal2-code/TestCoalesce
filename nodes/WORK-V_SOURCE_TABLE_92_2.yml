@@ -81,7 +81,9 @@ operation:
           - locationName: WORK
             nodeName: STG_SOURCE_TABLE
         join:
-          joinCondition: FROM {{ ref('WORK', 'STG_SOURCE_TABLE') }} "STG_SOURCE_TABLE"
+          joinCondition: |-
+            FROM {{ ref('WORK', 'STG_SOURCE_TABLE') }} "STG_SOURCE_TABLE"
+            where 1=1
         name: V_SOURCE_TABLE_92_2
         noLinkRefs: []
   name: V_SOURCE_TABLE_92_2
