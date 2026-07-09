@@ -1,0 +1,8 @@
+@id("2f695487-d50a-4133-a5bc-2030afa62116")
+@nodeType("21")
+SELECT
+     "ACCOUNT_ID" AS "ACCOUNT_ID",
+     "STATUS" AS "STATUS",
+     "MONTH" AS "MONTH",
+     "BALANCE" AS "BALANCE"
+FROM {{ ref('WORK', 'SOURCE_TABLE') }} "SOURCE_TABLE"
