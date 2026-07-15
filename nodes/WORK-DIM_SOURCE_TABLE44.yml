@@ -21,7 +21,7 @@ operation:
           stepCounter: 309965db-59e5-4986-b988-73c9997567fc
         config: {}
         dataType: NUMBER(38,0)
-        description: ""
+        description: Id of account
         isBusinessKey: true
         name: ACCOUNT_ID
         nullable: true

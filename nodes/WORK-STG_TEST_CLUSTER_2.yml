@@ -59,8 +59,263 @@ operation:
               - columnCounter: b1d4c5fd-3092-445f-bbe6-8bcf591824f0
                 stepCounter: 578c43a3-14c4-4cd4-a7da-7445178cb976
             transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019f5ac5-1f4e-7259-94b1-cda686acda2a
+          stepCounter: 3781b48f-715b-46d2-bd38-7b38cfe0e611
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CONSIGNMENT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b1d4c5fd-3092-445f-bbe6-8bcf591824f0
+                stepCounter: 578c43a3-14c4-4cd4-a7da-7445178cb976
+            transform: XMLGET("TEST_CLUSTER"."VALUE", 'Consignment')['$']::VARCHAR
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019f5ac5-1f4e-7259-94b1-d034682e9eb8
+          stepCounter: 3781b48f-715b-46d2-bd38-7b38cfe0e611
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: ARTICLE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b1d4c5fd-3092-445f-bbe6-8bcf591824f0
+                stepCounter: 578c43a3-14c4-4cd4-a7da-7445178cb976
+            transform: XMLGET("TEST_CLUSTER"."VALUE", 'Article')['$']::VARCHAR
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019f5ac5-1f4e-7259-94b1-d57a4fa9b29d
+          stepCounter: 3781b48f-715b-46d2-bd38-7b38cfe0e611
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EVENTTYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b1d4c5fd-3092-445f-bbe6-8bcf591824f0
+                stepCounter: 578c43a3-14c4-4cd4-a7da-7445178cb976
+            transform: XMLGET("TEST_CLUSTER"."VALUE", 'EventType')['$']::VARCHAR
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019f5ac5-1f4e-7259-94b1-db517e8edfde
+          stepCounter: 3781b48f-715b-46d2-bd38-7b38cfe0e611
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EVENTSUBTYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b1d4c5fd-3092-445f-bbe6-8bcf591824f0
+                stepCounter: 578c43a3-14c4-4cd4-a7da-7445178cb976
+            transform: XMLGET("TEST_CLUSTER"."VALUE", 'EventSubType')['$']::VARCHAR
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019f5ac5-1f4e-7259-94b1-de6281941194
+          stepCounter: 3781b48f-715b-46d2-bd38-7b38cfe0e611
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EVENTSTATUS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b1d4c5fd-3092-445f-bbe6-8bcf591824f0
+                stepCounter: 578c43a3-14c4-4cd4-a7da-7445178cb976
+            transform: XMLGET("TEST_CLUSTER"."VALUE", 'EventStatus')['$']::VARCHAR
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019f5ac5-1f4e-7259-94b1-e0c8c4696188
+          stepCounter: 3781b48f-715b-46d2-bd38-7b38cfe0e611
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: DEPOT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b1d4c5fd-3092-445f-bbe6-8bcf591824f0
+                stepCounter: 578c43a3-14c4-4cd4-a7da-7445178cb976
+            transform: XMLGET("TEST_CLUSTER"."VALUE", 'Depot')['$']::VARCHAR
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019f5ac5-1f4e-7259-94b1-e692eb1b4755
+          stepCounter: 3781b48f-715b-46d2-bd38-7b38cfe0e611
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EVENTDATETIME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b1d4c5fd-3092-445f-bbe6-8bcf591824f0
+                stepCounter: 578c43a3-14c4-4cd4-a7da-7445178cb976
+            transform: XMLGET("TEST_CLUSTER"."VALUE", 'EventDateTime')['$']::VARCHAR
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019f5ac5-1f4e-7259-94b1-e821ade69904
+          stepCounter: 3781b48f-715b-46d2-bd38-7b38cfe0e611
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: REFERENCE1
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b1d4c5fd-3092-445f-bbe6-8bcf591824f0
+                stepCounter: 578c43a3-14c4-4cd4-a7da-7445178cb976
+            transform: XMLGET("TEST_CLUSTER"."VALUE", 'Reference1')['$']::VARCHAR
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019f5ac5-1f4e-7259-94b1-ec400f802d7a
+          stepCounter: 3781b48f-715b-46d2-bd38-7b38cfe0e611
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: REFERENCE2
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b1d4c5fd-3092-445f-bbe6-8bcf591824f0
+                stepCounter: 578c43a3-14c4-4cd4-a7da-7445178cb976
+            transform: XMLGET("TEST_CLUSTER"."VALUE", 'Reference2')['$']::VARCHAR
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019f5ac5-1f4e-7259-94b1-f3e873846f8a
+          stepCounter: 3781b48f-715b-46d2-bd38-7b38cfe0e611
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: SIGNATURENAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b1d4c5fd-3092-445f-bbe6-8bcf591824f0
+                stepCounter: 578c43a3-14c4-4cd4-a7da-7445178cb976
+            transform: XMLGET("TEST_CLUSTER"."VALUE", 'SignatureName')['$']::VARCHAR
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019f5ac5-1f4e-7259-94b1-f593d471641c
+          stepCounter: 3781b48f-715b-46d2-bd38-7b38cfe0e611
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: ADABARCODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b1d4c5fd-3092-445f-bbe6-8bcf591824f0
+                stepCounter: 578c43a3-14c4-4cd4-a7da-7445178cb976
+            transform: XMLGET("TEST_CLUSTER"."VALUE", 'ADABarcode')['$']::VARCHAR
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019f5ac5-1f4e-7259-94b1-f9b532992bda
+          stepCounter: 3781b48f-715b-46d2-bd38-7b38cfe0e611
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: ATLBARCODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b1d4c5fd-3092-445f-bbe6-8bcf591824f0
+                stepCounter: 578c43a3-14c4-4cd4-a7da-7445178cb976
+            transform: XMLGET("TEST_CLUSTER"."VALUE", 'ATLBarcode')['$']::VARCHAR
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019f5ac5-1f4e-7259-94b1-fcbee04d3e12
+          stepCounter: 3781b48f-715b-46d2-bd38-7b38cfe0e611
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: POSTOFFICE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b1d4c5fd-3092-445f-bbe6-8bcf591824f0
+                stepCounter: 578c43a3-14c4-4cd4-a7da-7445178cb976
+            transform: XMLGET("TEST_CLUSTER"."VALUE", 'PostOffice')['$']::VARCHAR
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019f5ac5-1f4e-7259-94b2-00b6c116d27a
+          stepCounter: 3781b48f-715b-46d2-bd38-7b38cfe0e611
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: ADDRESS1
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b1d4c5fd-3092-445f-bbe6-8bcf591824f0
+                stepCounter: 578c43a3-14c4-4cd4-a7da-7445178cb976
+            transform: XMLGET("TEST_CLUSTER"."VALUE", 'Address1')['$']::VARCHAR
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019f5ac5-1f4e-7259-94b2-0628d88bb42a
+          stepCounter: 3781b48f-715b-46d2-bd38-7b38cfe0e611
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: ADDRESS2
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b1d4c5fd-3092-445f-bbe6-8bcf591824f0
+                stepCounter: 578c43a3-14c4-4cd4-a7da-7445178cb976
+            transform: XMLGET("TEST_CLUSTER"."VALUE", 'Address2')['$']::VARCHAR
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019f5ac5-1f4e-7259-94b2-08b495c03fe5
+          stepCounter: 3781b48f-715b-46d2-bd38-7b38cfe0e611
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: SUBURB
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b1d4c5fd-3092-445f-bbe6-8bcf591824f0
+                stepCounter: 578c43a3-14c4-4cd4-a7da-7445178cb976
+            transform: XMLGET("TEST_CLUSTER"."VALUE", 'Suburb')['$']::VARCHAR
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019f5ac5-1f4e-7259-94b2-0c4ea72d473b
+          stepCounter: 3781b48f-715b-46d2-bd38-7b38cfe0e611
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: POSTCODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b1d4c5fd-3092-445f-bbe6-8bcf591824f0
+                stepCounter: 578c43a3-14c4-4cd4-a7da-7445178cb976
+            transform: XMLGET("TEST_CLUSTER"."VALUE", 'Postcode')['$']::VARCHAR
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019f5ac5-1f4e-7259-94b2-126f9c29ca95
+          stepCounter: 3781b48f-715b-46d2-bd38-7b38cfe0e611
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CONSIGNMENTDETAILS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b1d4c5fd-3092-445f-bbe6-8bcf591824f0
+                stepCounter: 578c43a3-14c4-4cd4-a7da-7445178cb976
+            transform: XMLGET("TEST_CLUSTER"."VALUE", 'ConsignmentDetails')['$']::VARCHAR
     cteString: ""
+    description: ""
+    destinationName: ""
     enabledColumnTestIDs: []
+    materializationOption: ""
     sourceMapping:
       - aliases:
           TEST_CLUSTER: 578c43a3-14c4-4cd4-a7da-7445178cb976
