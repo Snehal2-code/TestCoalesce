@@ -1,6 +1,6 @@
 fileVersion: 1
-id: 3440b2dd-c17c-4d17-82e2-d6e4bc767ae1
-name: STG_TEST_CLUSTER_9428
+id: 85aa1ea3-2b8e-4a58-9444-843cc40dfaa6
+name: STG_TEST_CLUSTER_ticket9428
 operation:
   config:
     insertStrategy: INSERT
@@ -19,8 +19,8 @@ operation:
     columns:
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: fdd2b5f8-6b0a-4e1c-bda2-152b93924df1
-          stepCounter: 3440b2dd-c17c-4d17-82e2-d6e4bc767ae1
+          columnCounter: ea59d09b-95c5-481c-8efb-94a5b74f88fa
+          stepCounter: 85aa1ea3-2b8e-4a58-9444-843cc40dfaa6
         config: {}
         dataType: NUMBER(38,0)
         description: ""
@@ -33,8 +33,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: ab39e79d-6a2e-4a2f-ac4e-37578062cf12
-          stepCounter: 3440b2dd-c17c-4d17-82e2-d6e4bc767ae1
+          columnCounter: f6ca05d1-2c01-42e3-8322-593c0ce166b7
+          stepCounter: 85aa1ea3-2b8e-4a58-9444-843cc40dfaa6
         config: {}
         dataType: DATE
         description: ""
@@ -47,8 +47,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: ea8d6193-6651-439b-9013-e9f090a2d70b
-          stepCounter: 3440b2dd-c17c-4d17-82e2-d6e4bc767ae1
+          columnCounter: 41bbc2b2-8c3c-4d12-bb42-393b471d9575
+          stepCounter: 85aa1ea3-2b8e-4a58-9444-843cc40dfaa6
         config: {}
         dataType: VARCHAR(16777216)
         description: ""
@@ -71,9 +71,9 @@ operation:
             nodeName: TEST_CLUSTER
         join:
           joinCondition: FROM {{ ref('WORK', 'TEST_CLUSTER') }} "TEST_CLUSTER"
-        name: STG_TEST_CLUSTER_9428
+        name: STG_TEST_CLUSTER_ticket9428
         noLinkRefs: []
-  name: STG_TEST_CLUSTER_9428
+  name: STG_TEST_CLUSTER_ticket9428
   overrideSQL: false
   schema: ""
   sqlType: Stage
