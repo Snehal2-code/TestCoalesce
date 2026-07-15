@@ -54,6 +54,7 @@ operation:
         config: {}
         dataType: VARCHAR(20)
         description: ""
+        isChangeTracking: true
         name: STATUS
         nullable: true
         sourceColumnReferences:
@@ -191,6 +192,26 @@ operation:
         sourceColumnReferences:
           - columnReferences: []
             transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 87c1dc68-e69a-4e0e-aee3-df6f1b87ab5b
+          stepCounter: cefa9221-798a-458d-b6e8-8aaa7ac1cb39
+        config: {}
+        dataType: VARCHAR
+        defaultValue: ""
+        description: ""
+        keyColumnType: None
+        name: new_col
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: "0"
+                stepCounter: "0"
+            transform: ""
+        systemColumnType: None
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
