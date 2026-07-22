@@ -1,6 +1,6 @@
-excludeSelector: "{ location: \"WORK\" name: \"DIM_CUSTOMER_9455\" } OR { location: \"WORK\" name: \"DIM_SUPPLIER\" }"
+excludeSelector: "{ location: \"WORK\" name: \"DIM_CUSTOMER_9455\" } OR { location: \"WORK\" name: \"DIM_SUPPLIER\" } OR { location: \"WORK\" name: \"DIM_CUSTOMER\" }"
 fileVersion: 1
 id: "11"
-includeSelector: "{ location: \"WORK\" name: \"STG_CUSTOMER\" } OR { location: \"WORK\" name: \"DIM_CUSTOMER_9455\" } OR { location: \"WORK\" name: \"DIM_SUPPLIER\" }"
+includeSelector: "{ location: \"WORK\" name: \"STG_CUSTOMER\" } OR { location: \"WORK\" name: \"DIM_CUSTOMER_9455\" } OR { location: \"WORK\" name: \"DIM_SUPPLIER\" } OR { location: \"WORK\" name: \"DIM_CUSTOMER\" }"
 name: Ticket_9455
 type: Job
