@@ -1,4 +1,5 @@
-excludeSelector: "{ location: \"WORK\" name: \"DIM_CUSTOMER_9455\" } OR { location: \"WORK\" name: \"DIM_SUPPLIER\" } OR { location: \"WORK\" name: \"DIM_CUSTOMER\" } OR { location: \"WORK\" name: \"DIM_CUSTOMER_2\" }"
+excludeSelector: |
+  { location: "WORK" name: "DIM_CUSTOMER_9455" } OR { location: "WORK" name: "DIM_SUPPLIER" } OR { location: "WORK" name: "DIM_CUSTOMER" }
 fileVersion: 1
 id: "11"
 includeSelector: "{ location: \"WORK\" name: \"STG_CUSTOMER\" } OR { location: \"WORK\" name: \"DIM_CUSTOMER_9455\" } OR { location: \"WORK\" name: \"DIM_SUPPLIER\" } OR { location: \"WORK\" name: \"DIM_CUSTOMER_1\" } OR { location: \"WORK\" name: \"DIM_CUSTOMER_2\" }"
