@@ -1,6 +1,6 @@
 fileVersion: 1
-id: a4594f95-91c5-4138-b18a-4b993ece5faa
-name: TGRR_NODE_1_TASKB
+id: ea568c4b-6341-47e6-a483-c757cb43cc39
+name: TGRR_NODE_1_TASKF
 operation:
   config:
     rootTask: TGCR_NODE_1
@@ -18,8 +18,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: 9853fcbc-bb93-47ac-88c5-7cedda23089b
-          stepCounter: a4594f95-91c5-4138-b18a-4b993ece5faa
+          columnCounter: cea351c2-079a-4168-beee-913c106adc4e
+          stepCounter: ea568c4b-6341-47e6-a483-c757cb43cc39
         config: {}
         dagResumeTS: true
         dataType: timestamp_ntz
@@ -35,8 +35,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: faaeb2cc-7420-4ad2-a5a9-168bbc5bd18f
-          stepCounter: a4594f95-91c5-4138-b18a-4b993ece5faa
+          columnCounter: d7d45cdf-5651-444c-86db-3c0e8c9a61a8
+          stepCounter: ea568c4b-6341-47e6-a483-c757cb43cc39
         config: {}
         dagResumeTS: true
         dataType: string
@@ -51,17 +51,17 @@ operation:
     enabledColumnTestIDs: []
     sourceMapping:
       - aliases:
-          CTSK_NODE_1_TASKB: 8d4b419d-90f2-4910-9094-80cb0d9f5523
+          CTSK_NODE_1_TASKF: bf0585a1-d616-48d3-bfc8-8d06b60e4f8d
         customSQL:
           customSQL: ""
         dependencies:
           - locationName: WORK
-            nodeName: CTSK_NODE_1_TASKB
+            nodeName: CTSK_NODE_1_TASKF
         join:
-          joinCondition: FROM {{ ref('WORK', 'CTSK_NODE_1_TASKB') }} "CTSK_NODE_1_TASKB"
-        name: TGRR_NODE_1_TASKB
+          joinCondition: FROM {{ ref('WORK', 'CTSK_NODE_1_TASKF') }} "CTSK_NODE_1_TASKF"
+        name: TGRR_NODE_1_TASKF
         noLinkRefs: []
-  name: TGRR_NODE_1_TASKB
+  name: TGRR_NODE_1_TASKF
   overrideSQL: false
   schema: ""
   sqlType: StreamAndTask:::155

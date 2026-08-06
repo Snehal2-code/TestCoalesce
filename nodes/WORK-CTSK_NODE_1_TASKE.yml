@@ -1,6 +1,6 @@
 fileVersion: 1
-id: 8d4b419d-90f2-4910-9094-80cb0d9f5523
-name: CTSK_NODE_1_TASKB
+id: 0ee17b1b-3c4c-41f9-9493-b2a8eaa563fb
+name: CTSK_NODE_1_TASKE
 operation:
   config:
     devMode: false
@@ -32,15 +32,15 @@ operation:
     sourceMapping:
       - aliases: {}
         customSQL:
-          customSQL: |
-            CREATE OR REPLACE VIEW {{ ref('WORK','CTSK_NODE_1_TASKB') }} AS
+          customSQL: |-
+            CREATE OR REPLACE VIEW {{ ref('WORK','CTSK_NODE_1_TASKE') }} AS
             SELECT 1 AS ID;
         dependencies: []
         join:
           joinCondition: ""
-        name: CTSK_NODE_1_TASKB
+        name: CTSK_NODE_1_TASKE
         noLinkRefs: []
-  name: CTSK_NODE_1_TASKB
+  name: CTSK_NODE_1_TASKE
   overrideSQL: true
   schema: ""
   sqlType: StreamAndTask:::677

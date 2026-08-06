@@ -1,6 +1,6 @@
 fileVersion: 1
-id: 8d4b419d-90f2-4910-9094-80cb0d9f5523
-name: CTSK_NODE_1_TASKB
+id: a6cfc0c8-2432-4861-aff8-b2c2ce2695c9
+name: CTSK_NODE_1_TASKC
 operation:
   config:
     devMode: false
@@ -8,7 +8,7 @@ operation:
     maxServerlessSize: 6. XXLARGE
     minServerlessSize: 1. XSMALL
     multiStreamBehavior: AND
-    predTask: CTSK_NODE_1_TASKA_TASK
+    predTask: CTSK_NODE_1_TASKB_TASK
     rootTask: TGCR_NODE_1
     schedulePeriodOption: Predecessor
     schedulingMode: Warehouse Task
@@ -32,15 +32,15 @@ operation:
     sourceMapping:
       - aliases: {}
         customSQL:
-          customSQL: |
-            CREATE OR REPLACE VIEW {{ ref('WORK','CTSK_NODE_1_TASKB') }} AS
+          customSQL: |-
+            CREATE OR REPLACE VIEW {{ ref('WORK','CTSK_NODE_1_TASKC') }} AS
             SELECT 1 AS ID;
         dependencies: []
         join:
           joinCondition: ""
-        name: CTSK_NODE_1_TASKB
+        name: CTSK_NODE_1_TASKC
         noLinkRefs: []
-  name: CTSK_NODE_1_TASKB
+  name: CTSK_NODE_1_TASKC
   overrideSQL: true
   schema: ""
   sqlType: StreamAndTask:::677
