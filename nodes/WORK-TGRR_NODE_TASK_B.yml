@@ -1,0 +1,70 @@
+fileVersion: 1
+id: 704de1e6-a329-4f83-b431-45ee26515c8a
+name: TGRR_NODE_TASK_B
+operation:
+  config:
+    rootTask: ROOT_TASK
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: task
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a5298d24-560a-41b5-b09e-066c1c31d25e
+          stepCounter: 704de1e6-a329-4f83-b431-45ee26515c8a
+        config: {}
+        dagResumeTS: true
+        dataType: timestamp_ntz
+        defaultValue: ""
+        description: ""
+        name: DAG_RESUME_TIMESTAMP
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: current_timestamp()::timestamp_ntz
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 10c493b9-898f-4f4a-b355-fc6df78fc2b1
+          stepCounter: 704de1e6-a329-4f83-b431-45ee26515c8a
+        config: {}
+        dagResumeTS: true
+        dataType: string
+        defaultValue: ""
+        description: ""
+        name: DAG_ROOT_TASK_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: desiredState.config.rootTask
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          CTSK_NODE_TASK_B: c8d74d4f-14a5-4738-b18b-a6e677147c4f
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WORK
+            nodeName: CTSK_NODE_TASK_B
+        join:
+          joinCondition: FROM {{ ref('WORK', 'CTSK_NODE_TASK_B') }} "CTSK_NODE_TASK_B"
+        name: TGRR_NODE_TASK_B
+        noLinkRefs: []
+  name: TGRR_NODE_TASK_B
+  overrideSQL: false
+  schema: ""
+  sqlType: StreamAndTask:::155
+  type: sql
+  version: 1
+type: Node
