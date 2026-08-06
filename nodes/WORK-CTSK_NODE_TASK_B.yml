@@ -33,10 +33,9 @@ operation:
       - aliases:
           CTSK_NODE_TASK_A: 2b0eb68e-2fe9-4c7b-8f13-d233a99d537c
         customSQL:
-          customSQL: |-
+          customSQL: |
             CREATE OR REPLACE VIEW {{ ref('WORK','CTSK_NODE_TASK_B') }} AS
-            SELECT *
-            FROM {{ ref('WORK','TASK_A') }};
+            SELECT 1 AS ID;
         dependencies:
           - locationName: WORK
             nodeName: CTSK_NODE_TASK_A
