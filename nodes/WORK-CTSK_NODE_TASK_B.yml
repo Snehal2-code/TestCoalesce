@@ -1,0 +1,53 @@
+fileVersion: 1
+id: c8d74d4f-14a5-4738-b18b-a6e677147c4f
+name: CTSK_NODE_TASK_B
+operation:
+  config:
+    devMode: true
+    flagSrcStream: false
+    maxServerlessSize: 6. XXLARGE
+    minServerlessSize: 1. XSMALL
+    multiStreamBehavior: AND
+    predTask: DATA_TRANSFORMATION_ROOT_TASK
+    rootTask: DATA_TRANSFORMATION_PRED_TASK
+    schedulePeriodOption: Predecessor
+    schedulingMode: Warehouse Task
+    serverlessSize: 3. MEDIUM
+    sizeBoundToggle: false
+    spfcUserToggle: false
+    timeOut: 60000
+    userName: ""
+    whName: <WAREHOUSE_NAME>
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: task
+  metadata:
+    appliedNodeTests: []
+    columns: []
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          CTSK_NODE_TASK_A: 2b0eb68e-2fe9-4c7b-8f13-d233a99d537c
+        customSQL:
+          customSQL: |-
+            CREATE OR REPLACE VIEW {{ ref('WORK','CTSK_NODE_TASK_B') }} AS
+            SELECT *
+            FROM {{ ref('WORK','TASK_A') }};
+        dependencies:
+          - locationName: WORK
+            nodeName: CTSK_NODE_TASK_A
+        join:
+          joinCondition: FROM {{ ref('WORK', 'CTSK_NODE_TASK_A') }} "CTSK_NODE_TASK_A"
+        name: CTSK_NODE_TASK_B
+        noLinkRefs: []
+  name: CTSK_NODE_TASK_B
+  overrideSQL: true
+  schema: ""
+  sqlType: StreamAndTask:::677
+  type: sql
+  version: 1
+type: Node

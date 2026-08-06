@@ -1,0 +1,54 @@
+fileVersion: 1
+id: 2b0eb68e-2fe9-4c7b-8f13-d233a99d537c
+name: CTSK_NODE_TASK_A
+operation:
+  config:
+    devMode: true
+    flagSrcStream: false
+    maxServerlessSize: 6. XXLARGE
+    minServerlessSize: 1. XSMALL
+    multiStreamBehavior: AND
+    predTask: DATA_TRANSFORMATION_ROOT_TASK
+    rootTask: DATA_TRANSFORMATION_PRED_TASK
+    schedulePeriodOption: Predecessor
+    schedulingMode: Warehouse Task
+    serverlessSize: 3. MEDIUM
+    sizeBoundToggle: false
+    spfcUserToggle: false
+    timeOut: 60000
+    userName: ""
+    whName: <WAREHOUSE_NAME>
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: task
+  metadata:
+    appliedNodeTests: []
+    columns: []
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          TGCR_NODE: 8ca39d31-3916-4320-82cd-a7bd3e22358c
+        customSQL:
+          customSQL: |-
+            CREATE OR REPLACE VIEW {{ ref('WORK','CTSK_NODE_TASK_A') }} AS
+            SELECT 1 AS ID;
+
+            	
+        dependencies:
+          - locationName: WORK
+            nodeName: TGCR_NODE
+        join:
+          joinCondition: FROM {{ ref('WORK', 'TGCR_NODE') }} "TGCR_NODE"
+        name: CTSK_NODE_TASK_A
+        noLinkRefs: []
+  name: CTSK_NODE_TASK_A
+  overrideSQL: true
+  schema: ""
+  sqlType: StreamAndTask:::677
+  type: sql
+  version: 1
+type: Node

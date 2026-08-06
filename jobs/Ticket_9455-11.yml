@@ -1,7 +1,6 @@
-excludeSelector: |
-  { location: "WORK" name: "DIM_CUSTOMER_9455" } OR { location: "WORK" name: "DIM_SUPPLIER" } OR { location: "WORK" name: "DIM_CUSTOMER" }
+excludeSelector: "{nodeType: View}"
 fileVersion: 1
 id: "11"
-includeSelector: "{ location: \"WORK\" name: \"STG_CUSTOMER\" } OR { location: \"WORK\" name: \"DIM_CUSTOMER_9455\" } OR { location: \"WORK\" name: \"DIM_SUPPLIER\" } OR { location: \"WORK\" name: \"DIM_CUSTOMER_1\" } OR { location: \"WORK\" name: \"DIM_CUSTOMER_2\" }"
+includeSelector: "{ location: \"WORK\" name: \"STG_CUSTOMER\" } OR { location: \"WORK\" name: \"DIM_CUSTOMER_9455\" } OR { location: \"WORK\" name: \"DIM_SUPPLIER\" } OR { location: \"WORK\" name: \"DIM_CUSTOMER_1\" } OR { location: \"WORK\" name: \"DIM_CUSTOMER_2\" } OR { subgraph: \"NODE\" }"
 name: Ticket_9455
 type: Job

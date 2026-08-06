@@ -1,0 +1,61 @@
+fileVersion: 1
+id: 8ca39d31-3916-4320-82cd-a7bd3e22358c
+name: TGCR_NODE
+operation:
+  config:
+    autoRetryToggle: false
+    autoSuspendToggle: false
+    configJSON: ""
+    errIntName: ""
+    errNotifyToggle: false
+    execTime:
+      items:
+        - period: Minutes
+          value: "05"
+    maxServerlessSize: 6. XXLARGE
+    mflagSrcStream: false
+    minServerlessSize: 1. XSMALL
+    multiStreamBehavior: AND
+    numFailures: "10"
+    overlapExecToggle: false
+    retryAttmpt: "0"
+    scheduleCRON: 5 0-23 * * * America/Los_Angeles
+    schedulePeriodOption: Minutes
+    schedulingMode: Warehouse Task
+    serverlessSize: 3. MEDIUM
+    sizeBoundToggle: false
+    spfcUserToggle: false
+    succIntName: ""
+    successNotifyToggle: false
+    taskGraphToggle: false
+    timeOut: 60000
+    tskSql: select current_timestamp()
+    userName: ""
+    whName: COMPUTE_WH
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: task
+  metadata:
+    appliedNodeTests: []
+    columns: []
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies: []
+        join:
+          joinCondition: ""
+        name: TGCR_NODE
+        noLinkRefs: []
+  name: TGCR_NODE
+  overrideSQL: false
+  schema: ""
+  sqlType: StreamAndTask:::154
+  type: sql
+  version: 1
+type: Node

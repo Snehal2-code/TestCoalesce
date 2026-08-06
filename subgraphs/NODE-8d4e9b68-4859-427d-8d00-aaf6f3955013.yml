@@ -4,5 +4,6 @@ name: NODE
 steps:
   - 7369463f-5dc6-4031-a099-9b565983c87c
   - a96b87d0-958f-4159-bb86-5f1bf6eb7990
+  - b896292b-4b70-41bd-b4b0-d1c7767f8b7b
   - f60e0ce9-d37e-4d62-9e67-4863b5078b2f
 type: Subgraph
