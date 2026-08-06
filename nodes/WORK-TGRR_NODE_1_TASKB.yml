@@ -1,0 +1,70 @@
+fileVersion: 1
+id: a4594f95-91c5-4138-b18a-4b993ece5faa
+name: TGRR_NODE_1_TASKB
+operation:
+  config:
+    rootTask: TGCR_NODE_1
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: task
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9853fcbc-bb93-47ac-88c5-7cedda23089b
+          stepCounter: a4594f95-91c5-4138-b18a-4b993ece5faa
+        config: {}
+        dagResumeTS: true
+        dataType: timestamp_ntz
+        defaultValue: ""
+        description: ""
+        name: DAG_RESUME_TIMESTAMP
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: current_timestamp()::timestamp_ntz
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: faaeb2cc-7420-4ad2-a5a9-168bbc5bd18f
+          stepCounter: a4594f95-91c5-4138-b18a-4b993ece5faa
+        config: {}
+        dagResumeTS: true
+        dataType: string
+        defaultValue: ""
+        description: ""
+        name: DAG_ROOT_TASK_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: desiredState.config.rootTask
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          CTSK_NODE_1_TASKB: 8d4b419d-90f2-4910-9094-80cb0d9f5523
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WORK
+            nodeName: CTSK_NODE_1_TASKB
+        join:
+          joinCondition: FROM {{ ref('WORK', 'CTSK_NODE_1_TASKB') }} "CTSK_NODE_1_TASKB"
+        name: TGRR_NODE_1_TASKB
+        noLinkRefs: []
+  name: TGRR_NODE_1_TASKB
+  overrideSQL: false
+  schema: ""
+  sqlType: StreamAndTask:::155
+  type: sql
+  version: 1
+type: Node

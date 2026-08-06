@@ -1,23 +1,23 @@
 fileVersion: 1
-id: 2b0eb68e-2fe9-4c7b-8f13-d233a99d537c
-name: CTSK_NODE_TASK_A
+id: 72bc61a6-dc18-4f2b-b85a-408b58270c83
+name: CTSK_NODE_1_TASKA
 operation:
   config:
-    devMode: true
+    devMode: false
     flagSrcStream: false
     maxServerlessSize: 6. XXLARGE
     minServerlessSize: 1. XSMALL
     multiStreamBehavior: AND
-    predTask: DATA_TRANSFORMATION_ROOT_TASK
-    rootTask: DATA_TRANSFORMATION_PRED_TASK
+    predTask: TGCR_NODE_1
+    rootTask: TGCR_NODE_1
     schedulePeriodOption: Predecessor
     schedulingMode: Warehouse Task
     serverlessSize: 3. MEDIUM
     sizeBoundToggle: false
     spfcUserToggle: false
-    timeOut: 60000
+    timeOut: "60000"
     userName: ""
-    whName: <WAREHOUSE_NAME>
+    whName: COMPUTE_WH
   database: ""
   deployEnabled: true
   description: ""
@@ -31,21 +31,19 @@ operation:
     enabledColumnTestIDs: []
     sourceMapping:
       - aliases:
-          TGCR_NODE: 8ca39d31-3916-4320-82cd-a7bd3e22358c
+          TGCR_NODE_1: 8ca39d31-3916-4320-82cd-a7bd3e22358c
         customSQL:
-          customSQL: |-
-            CREATE OR REPLACE VIEW {{ ref('WORK','CTSK_NODE_TASK_A') }} AS
-            SELECT 2 AS ID;
-
-            	
+          customSQL: |
+            CREATE OR REPLACE VIEW {{ ref('WORK','CTSK_NODE_1_TASKA') }} AS
+            SELECT 1 AS ID;
         dependencies:
           - locationName: WORK
-            nodeName: TGCR_NODE
+            nodeName: TGCR_NODE_1
         join:
-          joinCondition: FROM {{ ref('WORK', 'TGCR_NODE') }} "TGCR_NODE"
-        name: CTSK_NODE_TASK_A
+          joinCondition: FROM {{ ref('WORK', 'TGCR_NODE_1') }} "TGCR_NODE_1"
+        name: CTSK_NODE_1_TASKA
         noLinkRefs: []
-  name: CTSK_NODE_TASK_A
+  name: CTSK_NODE_1_TASKA
   overrideSQL: true
   schema: ""
   sqlType: StreamAndTask:::677

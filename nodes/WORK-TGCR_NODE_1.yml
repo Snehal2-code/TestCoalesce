@@ -1,6 +1,6 @@
 fileVersion: 1
 id: 8ca39d31-3916-4320-82cd-a7bd3e22358c
-name: TGCR_NODE
+name: TGCR_NODE_1
 operation:
   config:
     autoRetryToggle: false
@@ -50,9 +50,9 @@ operation:
         dependencies: []
         join:
           joinCondition: ""
-        name: TGCR_NODE
+        name: TGCR_NODE_1
         noLinkRefs: []
-  name: TGCR_NODE
+  name: TGCR_NODE_1
   overrideSQL: false
   schema: ""
   sqlType: StreamAndTask:::154
